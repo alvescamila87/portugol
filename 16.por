@@ -1,13 +1,12 @@
-// Desenvolva um algoritmo que receba uma quantidade de um alimento em quilos, calcule e mostre quantos dias durará esse alimento para uma pessoa que consome 50 gramas desse alimento por dia.
+// Elabore um algoritmo que decomponha o número 1738, informando ao usuário o número de unidades, dezenas, centenas e milhares.
 
-programa
-{
-	
-	funcao inicio()
-	{
-		escreva("Olá Mundo")
+programa {
+	funcao inicio() {
+	    
 	}
 }
+
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.

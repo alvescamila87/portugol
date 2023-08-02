@@ -5,7 +5,13 @@ programa
 	
 	funcao inicio()
 	{
-		escreva("Olá Mundo")
+		real qtd_alimento, conversor, consumo
+		escreva("Informe a quantidade de alimentos em Kg: ")
+		leia(qtd_alimento)
+		conversor = qtd_alimento * 1000
+		escreva("Quantidade de alimento a ser consumido:", qtd_alimento, "kg convertido em gramas são: ", conversor, "gr.\n")
+		consumo = (conversor / 50) / 30
+		escreva("Com 50gr por dia, essa quantidade de será consumida em: ", consumo, " dias.")
 	}
 }
 /* $$$ Portugol Studio $$$ 
