@@ -8,11 +8,11 @@ programa {
 	funcao inicio() {
 	    
 	    inteiro qtd_bike, qtd_empregados
-	    real salario, total_pago, lucro_liquido, preco_bike, novo_preco_bike
+	    real salario_minimo, salario_empregado, lucro_liquido, preco_bike, novo_preco_bike
 	    escreva("Informe o número de empregados da loja: ")
 	    leia(qtd_empregados)
 	    escreva("Informe o valor do salário-mínimo: ")
-	    leia(salario)
+	    leia(salario_minimo)
 	    escreva("Informe o preço de custo de cada bicicleta: ")
 	    leia(qtd_bike)
 	    escreva("Informe o número de bicicletas vendidas: ")
@@ -20,11 +20,11 @@ programa {
 	    // Valor de venda final da bike
 	    novo_preco_bike = preco_bike * 1.50
 	    // Valor pago para cada vendedor + comissao
-	    total_pago = (salario * 2) + (0.15 * preco_bike * qtd_bike) / qtd_empregados
+	    total_pago = (salario_minimo * 2) + (0.15 * preco_bike * qtd_bike) / qtd_empregados
 	    //Lucro da empresa
-	    lucro_liquido = qtd_bike * (novo_preco_bike - preco_bike) - total_pago * qtd_empregados
+	    lucro_liquido = qtd_bike * (novo_preco_bike - preco_bike) - salario_empregado * qtd_empregados
 	    //calcular e escrever:
-	    escreva("O salário final de cada empregado é de: R$", total_pago, ".\n")
+	    escreva("O salário final de cada empregado é de: R$", salario_empregado, ".\n")
 	    escreva("O lucro (líquido) da loja é de: R$", lucro_liquido,".\n")	
 	}
 }

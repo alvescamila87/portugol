@@ -2,12 +2,30 @@
 // equilíbrio no número de alunos em cada turma. Caso ocorra diferença no número de alunos, esta
 // deverá ser a mínima. Escreva um algoritmo que leia o número de alunos da série, calcule e mostre
 // o número de alunos em cada turma 
+
 programa {
+    
+    inclua biblioteca Tipos --> t
+    
 	funcao inicio() {
 	    
+	    inteiro n_alunos, turma_a, turma_b, turma_c
+	    escreva("Informe o número de alunos: ")
+	    leia(n_alunos)
+	    
+	    turma_a = n_alunos / 3 
+	    n_alunos = n_alunos - turma_a
+	    
+	    turma_b = n_alunos / 2 
+	    n_alunos = n_alunos - turma_b
+	    
+	    turma_c = n_alunos 
+	    
+	    escreva("A turma A possui: ", turma_a, " alunos. \n")
+	    escreva("A turma B possui: ", turma_b, " alunos. \n")
+	    escreva("A turma C possui: ", turma_c, " alunos. \n")
 	}
 }
-
 
 /* $$$ Portugol Studio $$$ 
  * 
