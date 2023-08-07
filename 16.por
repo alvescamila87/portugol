@@ -1,25 +1,29 @@
 // Elabore um algoritmo que decomponha o número 1738, informando ao usuário o número de unidades, dezenas, centenas e milhares.
 
 programa {
-    
-    inclua biblioteca Tipos --> t
-    
+
 	funcao inicio() {
-	    
-	    inteiro numero, unidade, dezena, centena, milhar
-	    numero = 1738
-	    // obter unidade
-	    unidade = ((numero / 1) % 10) * 1
-	    escreva("A unidade é: ", unidade, ".\n")
-	    // obter dezena
-	    dezena = ((numero / 10) % 10) * 10
-	    escreva("A dezena é: ", dezena, ".\n")
-	    // obter centena
-	    centena = ((numero / 100) % 10) * 100
-	    escreva("A centena é: ", centena, ".\n")
-	    // obter milhar
-	    milhar = ((numero / 1000) % 10) * 1000
-	    escreva("O milhar é: ", milhar, ".\n")
+
+	  inteiro resto, x = 1738
+	  // obter milhar
+      resto = x % 1000
+      x/= x    
+	  escreva("1738 possui ", x, " milhar(es).\n")
+      // obter centena
+      x=resto 
+      resto = x%100
+      x/=100
+	  escreva("1738 possui ", x, " centena(s).\n")
+      // obter dezena
+      x=resto 
+      resto = x%10
+      x/=10
+	  escreva("1738 possui ", x, " dezena(s).\n")
+      // obter unidade
+      x=resto 
+      resto=x%10
+      x/=1
+	  escreva("1738 possui ", x, " unidade(s).\n")
 	}
 }
 
