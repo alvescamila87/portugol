@@ -10,7 +10,7 @@ programa
 		leia(qtd_alimento)
 		conversor = qtd_alimento * 1000
 		escreva("Quantidade de alimento a ser consumido:", qtd_alimento, "kg convertido em gramas são: ", conversor, "gr.\n")
-		consumo = (conversor / 50) / 30
+		consumo = (conversor / 50) 
 		escreva("Com 50gr por dia, essa quantidade de será consumida em: ", consumo, " dias.")
 	}
 }
