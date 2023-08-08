@@ -14,17 +14,17 @@ programa
 		escreva("Informe o percentual de alunos REPROVADOS na Turma 'C': ") 
 		leia(alunos)
 		turma_c = 60 
-		reprovados_c = turma_c * alunos / 100
+		reprovados_c = (turma_c * alunos) / 100
 		aprovados_c = turma_c - reprovados_c
 		escreva("Informe o percentual de alunos APROVADOS na Turma 'D': ")
 		leia(alunos)
 		turma_d = 20
-		aprovados_d = turma_d * alunos / 100
+		aprovados_d = (turma_d * alunos) / 100
 		reprovados_d = turma_d - aprovados_d
 		escreva("Turma C tem: ", turma_c, " de alunos, sendo: ", aprovados_c, " de alunos aprovados e: ", reprovados_c, " de alunos reprovados.\n")
 		escreva("Turma D tem: ", turma_d, " de alunos, sendo: ", aprovados_d, " de alunos aprovados e: ", reprovados_d, " de alunos reprovados.\n")
 		total_alunos = turma_c + turma_d
-		reprovados_total = (reprovados_c + reprovados_d) / total_alunos
+		reprovados_total = (reprovados_c + reprovados_d) * 100 / total_alunos
 		escreva("A percentagem de alunos reprovados é de: ", reprovados_total, " por cento em relação ao total de alunos das duas turmas, que é de: ", total_alunos, ".")
 	}
 }
