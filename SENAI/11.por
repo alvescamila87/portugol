@@ -8,7 +8,7 @@ programa
 		inteiro numero
 		escreva("Informe um valor: ")
 		leia(numero)
-		escreva("Número informado: ", numero, " tem o quociente de: ", numero / 3, " e o resto é: ", numero % 3, ".")
+		escreva("Número informado: ", numero, " Quociente por 3 de: ", numero / 3, " Resto por 3 de: ", numero % 3, ".")
 	}
  
 }
