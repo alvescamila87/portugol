@@ -5,7 +5,7 @@
 
 programa {
     
-    inclua biblioteca Tipos --> t
+    //Solução do professor
     
 	funcao inicio() {
 	    

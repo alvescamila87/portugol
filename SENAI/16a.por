@@ -8,19 +8,18 @@ programa {
     numero = 1738
 
     milhar = numero / 1000
-    escreva("Milhar: ", milhar)
+    escreva("\nMilhar: ", milhar)
 
     centena = numero % 1000
     centena = centena / 100
-    escreva("Centena: ", centena)
+    escreva("\nCentena: ", centena)
 
     dezena = numero % 100
     dezena = dezena / 10
-    escreva("Dezena: ", dezena)
+    escreva("\nDezena: ", dezena)
 
     unidade = numero % 10
-    unidade = unidade / 1
-    escreva("Unidade: ", unidade)
+    escreva("\nUnidade: ", unidade)
 	}
 }
 
