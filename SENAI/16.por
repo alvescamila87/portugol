@@ -4,26 +4,23 @@ programa {
 
 	funcao inicio() {
 
-	  inteiro resto, x = 1738
-	  // obter milhar
-      resto = x % 1000
-      x/= x    
-	  escreva("1738 possui ", x, " milhar(es).\n")
-      // obter centena
-      x=resto 
-      resto = x%100
-      x/=100
-	  escreva("1738 possui ", x, " centena(s).\n")
-      // obter dezena
-      x=resto 
-      resto = x%10
-      x/=10
-	  escreva("1738 possui ", x, " dezena(s).\n")
-      // obter unidade
-      x=resto 
-      resto=x%10
-      x/=1
-	  escreva("1738 possui ", x, " unidade(s).\n")
+	  inteiro numero, milhar, centena, dezena, unidade
+    numero = 1738
+
+    milhar = numero / 1000
+    escreva("Milhar: ", milhar)
+
+    centena = numero % 1000
+    centena = centena / 100
+    escreva("Centena: ", centena)
+
+    dezena = numero % 100
+    dezena = dezena / 10
+    escreva("Dezena: ", dezena)
+
+    unidade = numero % 10
+    unidade = unidade / 1
+    escreva("Unidade: ", unidade)
 	}
 }
 

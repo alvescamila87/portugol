@@ -9,17 +9,16 @@ programa {
     
 	funcao inicio() {
 	    
-	    inteiro n_alunos, turma_a, turma_b, turma_c
+	    inteiro total_alunos, aluno_por_turma, resto, turma_a, turma_b, turma_c
 	    escreva("Informe o número de alunos: ")
-	    leia(n_alunos)
+	    leia(total_alunos)
 	    
-	    turma_a = n_alunos / 3 
-	    n_alunos = n_alunos - turma_a
-	    
-	    turma_b = n_alunos / 2 
-	    n_alunos = n_alunos - turma_b
-	    
-	    turma_c = n_alunos 
+	    aluno_por_turma = total_alunos / 3
+		resto = total_alunos % 3
+
+		turma_a = aluno_por_turma
+		turma_b = aluno_por_turma
+		turma_c = aluno_por_turma + resto
 	    
 	    escreva("A turma A possui: ", turma_a, " alunos. \n")
 	    escreva("A turma B possui: ", turma_b, " alunos. \n")
