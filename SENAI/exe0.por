@@ -3,21 +3,20 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro num1, num2
-		escreva("Informe um valor inteiro para N1: ")
-		leia(num1)
-		escreva("Informe um valor inteiro para N2: ")
-		leia(num2)
-		escreva("A soma entre os valores: ", num1, " e ", num2, " é: ", num1+num2, ".")
-		
+	
+		caracter item
+		escreva("Informe uma letra ou um número ou um símbolo para 'A': ")
+		leia(item)
+		escreva("\nPara 'A' foi informado: " + "'" + item + "'")
 	}
 }
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 265; 
+ * @POSICAO-CURSOR = 197; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
