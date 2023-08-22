@@ -3,11 +3,11 @@ programa
 	
 	funcao inicio()
 	{
-		real salario, novo_salario
-		escreva("Informe o salário do funcionário:  R$")
-		leia(salario)
-		novo_salario = salario * (1.15)
-		escreva("O novo salário do funcionário é de R$", novo_salario)
+		real milhas, quilometros
+		escreva("Informe a distância em milhas: ")
+		leia(milhas)
+		quilometros = milhas / 1.60934
+		escreva(milhas, " milhas convertidas para quilômetros são: ", quilometros, " km.")
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -15,7 +15,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 233; 
+ * @POSICAO-CURSOR = 150; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

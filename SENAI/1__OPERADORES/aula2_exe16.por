@@ -3,12 +3,13 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro n1, n2
-		escreva("Informe o valor de N1: ")
-		leia(n1)
-		escreva("Informe o valor de N2: ")
-		leia(n2)
-		escreva("A soma dos números: ", n1, " e ", n2, " é: ", n1+n2, ".")
+		real qtd_alimento, gramas, dias
+		escreva("Qual a quantidade de alimentos em kg: ")
+		leia(qtd_alimento)
+		gramas = (qtd_alimento * 1000)
+		dias = gramas / 50
+		escreva(qtd_alimento, " kg de comida são: ", gramas, " gr e se alimentando com 50gr por dia a quantidade durará: ", dias, " dias.")
+		
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -16,7 +17,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 218; 
+ * @POSICAO-CURSOR = 332; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
