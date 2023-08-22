@@ -15,7 +15,7 @@ programa
 			// Saída de dados:
 			escreva(idade, " ANOS É MENOR DE IDADE.")
 		}
-		senao se (idade >= 18 e idade <= 65) 
+		senao se (idade >= 18 e idade <= 64) 
 		{	// Saída de dados:
 				escreva(idade, " ANOS É MAIOR DE IDADE.")
 		} 
