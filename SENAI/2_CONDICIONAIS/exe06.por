@@ -4,27 +4,31 @@ programa
 	funcao inicio()
 	{
 
-		// Entrada de dados
-		real total_horas_trabalhadas, horas_extras, salario, novo_salario
-		escreva("Informe a quantidade de horas trabalhadas no mÃªs: ")
-		leia(total_horas_trabalhadas)
+		// Problema 7
+    // - recebe hora extra se ACIMA de 40 horas
+    // - hora extra = valor hora regular * 1,50
+
+    // Entrada de dados
+    real qtd_horas, valor_hora, salario, resto, hora_extra
+		escreva("Informe a quantidade de horas trabalhadas no mês: ")
+		leia(qtd_horas)
+    escreva("Informe o valor hora do colaborador: R$")
+    leia(valor_hora)
 
 		// Processamento de dados
-		novo_salario = 
-		
-		
+    se (qtd_horas > 160) {
+      resto = qtd_horas % 160 
+      hora_extra = resto * (valor_hora * 1.50)
+      
+      salario = ((qtd_horas - resto) * valor_hora) + hora_extra
 
-		
+      // Saída de dados
+      escreva("Total de horas trabalhadas: ", qtd_horas, "hs, sendo destas: ", resto, "hs extra(s). Salário do mês: R$", salario, ".\n")
+      
+    } senao {
+      salario = qtd_horas * valor_hora
+      // Saída de dados
+      escreva("Total de horas trabalhadas: ", qtd_horas, ". Salário do mês: R$", salario, ".\n")
+    }		
 	}
 }
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seÃ§Ã£o do arquivo guarda informaÃ§Ãµes do Portugol Studio.
- * VocÃª pode apagÃ¡-la se estiver utilizando outro editor.
- * 
- * @POSICAO-CURSOR = 271; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
- */
