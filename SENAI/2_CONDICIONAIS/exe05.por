@@ -28,8 +28,8 @@ programa
 			}
 						
 		}
-		escreva(maior,"\n")
-		escreva(menor,"\n")
+		escreva("O maior número informado foi: ", maior,"\n")
+		escreva("O menor número informado foi: ", menor,"\n")
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -37,7 +37,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 484; 
+ * @POSICAO-CURSOR = 536; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
