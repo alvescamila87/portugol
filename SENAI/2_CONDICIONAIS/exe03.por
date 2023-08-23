@@ -16,7 +16,7 @@ programa
 		// Processamento de dados: 
 		imc = peso / (altura * altura)
 
-		se (imc <= 18.4) {
+		se (imc < 18.5 ) {
 			// Saída de dados:
 			escreva(imc, " kg, Classificação do IMC: 'ABAIXO DO PESO'")
 		}
