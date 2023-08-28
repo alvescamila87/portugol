@@ -10,25 +10,25 @@ programa
 
     // Entrada de dados
     real qtd_horas, valor_hora, salario, resto, hora_extra
-		escreva("Informe a quantidade de horas trabalhadas no mês: ")
+		escreva("Informe a quantidade de horas trabalhadas no mÃªs: ")
 		leia(qtd_horas)
     escreva("Informe o valor hora do colaborador: R$")
     leia(valor_hora)
 
 		// Processamento de dados
     se (qtd_horas > 160) {
-      resto = qtd_horas % 160 
+      resto = qtd_horas - 160 
       hora_extra = resto * (valor_hora * 1.50)
       
       salario = ((qtd_horas - resto) * valor_hora) + hora_extra
 
-      // Saída de dados
-      escreva("Total de horas trabalhadas: ", qtd_horas, "hs, sendo destas: ", resto, "hs extra(s). Salário do mês: R$", salario, ".\n")
+      // SaÃ­da de dados
+      escreva("Total de horas trabalhadas: ", qtd_horas, "hs, sendo destas: ", resto, "hs extra(s). SalÃ¡rio do mÃªs: R$", salario, ".\n")
       
     } senao {
       salario = qtd_horas * valor_hora
-      // Saída de dados
-      escreva("Total de horas trabalhadas: ", qtd_horas, ". Salário do mês: R$", salario, ".\n")
+      // SaÃ­da de dados
+      escreva("Total de horas trabalhadas: ", qtd_horas, ". SalÃ¡rio do mÃªs: R$", salario, ".\n")
     }		
 	}
 }
