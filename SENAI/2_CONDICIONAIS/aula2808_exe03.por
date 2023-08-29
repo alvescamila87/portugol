@@ -7,29 +7,29 @@ programa
 		escreva("Informe o número do mês: ")
 		leia(mes)
 		escolha(mes) {
-			caso 1: escreva("O mês: '", mes, "' escrito por inteiro é: 'Janeiro'.")
+			caso 1: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Janeiro'.")
 			pare 
-			caso 2: escreva("O mês: '", mes, "' escrito por inteiro é: 'Fevereiro'.")
+			caso 2: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Fevereiro'.")
 			pare
-			caso 3: escreva("O mês: '", mes, "' escrito por inteiro é: 'Março'.")
+			caso 3: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Março'.")
 			pare
-			caso 4: escreva("O mês: '", mes, "' escrito por inteiro é: 'Abril'.")
+			caso 4: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Abril'.")
 			pare
-			caso 5: escreva("O mês: '", mes, "' escrito por inteiro é: 'Maio'.")
+			caso 5: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Maio'.")
 			pare
-			caso 6: escreva("O mês: '", mes, "' escrito por inteiro é: 'Junho'.")
+			caso 6: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Junho'.")
 			pare
-			caso 7: escreva("O mês: '", mes, "' escrito por inteiro é: 'Julho'.")
+			caso 7: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Julho'.")
 			pare 
-			caso 8: escreva("O mês: '", mes, "' escrito por inteiro é: 'Agosto'.")
+			caso 8: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Agosto'.")
 			pare 
-			caso 9: escreva("O mês: '", mes, "' escrito por inteiro é: 'Setembro'.")
+			caso 9: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Setembro'.")
 			pare 
-			caso 10: escreva("O mês: '", mes, "' escrito por inteiro é: 'Outubro'.")
+			caso 10: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Outubro'.")
 			pare
-			caso 11: escreva("O mês: '", mes, "' escrito por inteiro é: 'Novembro'.")
+			caso 11: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Novembro'.")
 			pare
-			caso 12: escreva("O mês: '", mes, "' escrito por inteiro é: 'Dezembro'.")
+			caso 12: escreva("O número: '", mes, "' escrito por inteiro é o mês: 'Dezembro'.")
 			pare
 			caso contrario: escreva("[OPÇÃO INVÁLIDA] O número informado: ", mes, " não corresponde a um mês.")			
 		}
