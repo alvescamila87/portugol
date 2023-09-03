@@ -1,32 +1,23 @@
-programa
-{
-	
-	funcao inicio()
-	{
-		// Leia: número de livros comprados
-		// Escreva: valor total que o cliente deverá pagar
+programa {
+  funcao inicio() {
 
-		// Entrada de dados
-		inteiro qtd_livros
-		real valor, livro
-		escreva("Informe a quantidade de livros comprados: ")
-		leia(qtd_livros)
+    // Entrada de dados
+    inteiro qtd_livros
+    real valor, total
+    escreva("Informe a quantidade de livros comprados: ")
+    leia(qtd_livros)
 
-		// Processamento de dados
-		se (qtd >= 10) {
-			livro = valor 
-			
-		}
-	}
+    // Processamento dados
+    se (qtd_livros <= 10) {
+      valor = 12.00
+      total = qtd_livros * valor
+      // Sa�da de dados
+      escreva("O cliente dever� pagar o valor de R$", total, " por ", qtd_livros, " livros comprados.")
+    } senao {
+      valor = 8.00
+      total = qtd_livros * valor
+      // Sa�da de dados
+      escreva("O cliente dever� pagar o valor de R$", total, " por ", qtd_livros, " livros comprados.")
+    }   
+  }
 }
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
- * 
- * @POSICAO-CURSOR = 328; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
- */
