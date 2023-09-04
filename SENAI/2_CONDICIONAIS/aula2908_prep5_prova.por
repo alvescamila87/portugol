@@ -7,23 +7,26 @@ programa {
     leia(num1)
     escreva("Informe um valor inteiro para N2: ")
     leia(num2)
-    escreva("Informe uma das opções do menu: \n")
-    escreva("[1] Adição \n")
-    escreva("[2] Subtração \n")
-    escreva("[3] Divisão \n")
-    escreva("[4] Mutiplicação \n")
+    escreva("Informe uma das opï¿½ï¿½es do menu: \n")
+    escreva("[1] Adiï¿½ï¿½o \n")
+    escreva("[2] Subtraï¿½ï¿½o \n")
+    escreva("[3] Divisï¿½o \n")
+    escreva("[4] Mutiplicaï¿½ï¿½o \n")
     leia(opcao)
-    // Processamento e saída de dados:
+    // Processamento e saï¿½da de dados:
     escolha(opcao) {
-      caso 1: escreva("A soma entre os números: ", num1, " e ", num2, " é: ", num1+num2, ". \n")
+      caso 1: escreva("A soma entre os nï¿½meros: ", num1, " e ", num2, " ï¿½: ", num1+num2, ". \n")
       pare
-      caso 2: escreva("A subtração entre os números: ", num1, " e ", num2, " é: ", num1-num2, ". \n")
+      caso 2: escreva("A subtraï¿½ï¿½o entre os nï¿½meros: ", num1, " e ", num2, " ï¿½: ", num1-num2, ". \n")
       pare
-      caso 3: escreva("A divisão entre os números: ", num1, " e ", num2, " é: ", num1/num2, ". \n")
+      caso 3: 
+      se (num2 = 0) {escreva("O resultado da divisÃ£o Ã©: ERRO! \n")
+      } 
+      senao { escreva("A divisï¿½o entre os nï¿½meros: ", num1, " e ", num2, " ï¿½: ", num1/num2, ". \n") }
       pare
-      caso 4: escreva("A multiplicação entre os números: ", num1, " e ", num2, " é: ", num1*num2, ". \n")
+      caso 4: escreva("A multiplicaï¿½ï¿½o entre os nï¿½meros: ", num1, " e ", num2, " ï¿½: ", num1*num2, ". \n")
       pare
-      caso contrario: escreva("Opção inválida! Tente novamente... \n")
+      caso contrario: escreva("Opï¿½ï¿½o invï¿½lida! Tente novamente... \n")
     }
   }
 }
