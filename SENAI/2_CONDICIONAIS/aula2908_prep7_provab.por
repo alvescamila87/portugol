@@ -2,63 +2,35 @@ programa {
   funcao inicio() {
 
     // Entrada de dados
-    cadeia lanche, bebida
-    escreva("Informe um dos lanches: [Bauru / Pizza / X-Galinha] ")
+    inteiro lanche, bebida
+    escreva("Digite um das opções de lanche: \n")
+    escreva("[1] Bauru \n")
+    escreva("[2] Pizza \n")
+    escreva("[3] X-Galinha \n")
     leia(lanche)
-    escreva("Informe uma das bebibas: [Água / Guaraná / Vinho] ")
+    escreva("Digite um das opções de bebida: \n")
+    escreva("[1] Água \n")
+    escreva("[2] Guaraná \n")
+    escreva("[3] Vinho \n")
     leia(bebida)
 
     // a) O lanche bauru não poderá ser acompanhado da bebida guaraná. 
-    se (
-      lanche == "bauru" ou 
-      lanche == "BAURU" ou 
-      lanche == "Bauru" e 
-      bebida == "GUARANÁ" ou
-      bebida == "guaraná" ou
-      bebida == "Guarará" ou
-      bebida == "Guarara" ou
-      bebida == "GUARANA" ou
-      bebida == "guarana" 
-    ) {
+    se (lanche == 1 e bebida == 2) {
         escreva("O pedido NÃO pode ser atendido! \n")
-        escreva("Pedidos: ", lanche," ", bebida, " .\n")
-        escreva("ERRO: O lanche bauru não poderá ser acompanhado da bebida guaraná. \n")
+        escreva("ERRO: O lanche Bauru não poderá ser acompanhado da bebida Guaraná. \n")
     } 
       // b) Se o cliente pedir X galinha, não poderá pedir água. 
-    senao se (
-      lanche == "x-galinha" ou 
-      lanche == "xgalinha" ou 
-      lanche == "X-Galinha" ou 
-      lanche == "x-Galinha" ou 
-      lanche == "X-GALINHA" e 
-      bebida == "água" ou
-      bebida == "agua" ou
-      bebida == "AGUA" ou
-      bebida == "ÁGUA"
-      ) {
+    senao se (lanche == 3 e bebida == 1) {
         escreva("O pedido NÃO pode ser atendido! \n")
-        escreva("Pedidos: ", lanche," ", bebida, " .\n")
-        escreva("ERRO: Se o cliente pedir X galinha, não poderá pedir água. \n")
-    }
+        escreva("ERRO: Se o cliente pedir X-Galinha, não poderá pedir água. \n")
+      }
       // c) Quando o cliente pedir Pizza, somente poderá beber vinho ou água. 
-    senao se (
-      lanche == "PIZZA" ou 
-      lanche == "pizza" ou 
-      lanche == "Pizza" e 
-      bebida == "GUARANÁ" ou
-      bebida == "guaraná" ou
-      bebida == "Guarará" ou
-      bebida == "Guarara" ou
-      bebida == "GUARANA" ou
-      bebida == "guarana" 
-      ) {
+    senao se (lanche == 2 e bebida == 2) {
         escreva("O pedido NÃO pode ser atendido! \n")
-        escreva("Pedidos: ", lanche," ", bebida, " .\n")
-        escreva("ERRO: Quando o cliente pedir Pizza, somente poderá beber vinho ou água. \n")
+        escreva("ERRO: Quando o cliente pedir Pizza, somente poderá beber Vinho ou Água. \n")
     }
     senao {
         escreva("O pedido pode ser atendido! \n")
-        escreva("Pedidos: ", lanche," ", bebida, " .\n")
-    }
+      } 
   }
 }
