@@ -32,7 +32,7 @@ programa {
       escreva("O jogador Chico não pode ficar com zero pontos.") 
       escreva("Pontos Chico: ", chico, "\n")      
     }
-    senao se (bola > joao / 2 ou bola > joao + chico) {
+    senao se (bola > pedro / 2 ou bola > joao + chico) {
       // d) O jogador bola pode ficar com até metade dos pontos do jogador Pedro ou abaixo da soma de pontos dos jogadores João e chico. 
       escreva("TIME DESCLASSIFICADO!\n")
       escreva("O jogador Bola pode ficar com até metade dos pontos do jogador João OU \n")   
