@@ -23,7 +23,7 @@ programa {
 	    novo_preco_bike = preco_bike * 1.50
 
 	    // Valor pago para cada vendedor + comissao
-	    total_pago = (salario_minimo * 2) + (0.15 * preco_bike * qtd_bike) / qtd_empregados
+	    salario_empregado = (salario_minimo * 2) + (0.15 * preco_bike * qtd_bike) / qtd_empregados
 
 	    //Lucro da empresa
 	    lucro_liquido = qtd_bike * (novo_preco_bike - preco_bike) - salario_empregado * qtd_empregados
