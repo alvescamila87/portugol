@@ -5,17 +5,13 @@ programa
 	{
 		inteiro contador = 1		
 		cadeia nome
-		caracter sair 
 
 		faca {
-			escreva("Informe um nome OU digite 'zero' (0) para parar: ")
+			escreva("Informe um nome OU digite '0' (zero) para parar: ")
 			leia(nome)
-			if (nome = '0') {
-				sair = nome
-			}
 			contador++
-		} enquanto (sair != '0')
-		escreva("O nome foi informado ", contador, " vezes. \n")
+		} enquanto (nome != '0')
+		escreva("O nome foi informado ", contador - 1, " vezes. \n")
 	}
 }
 /* $$$ Portugol Studio $$$ 
