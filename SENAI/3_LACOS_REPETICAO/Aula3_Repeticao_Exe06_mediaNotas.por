@@ -9,22 +9,41 @@ quando o código for igual a zero.
 	
 	funcao inicio()
 	{
-		inteiro contador=0, codigoAluno, qtdAlunos=0
-		real media, nota, soma=0.0
+		inteiro contador=0, codigoAluno=1, qtdAlunos=0, contadorNota
+		real media, nota, soma
 
-		escreva("Informe o código do aluno: ")
-		leia(codigoAluno)
+		enquanto (contador < 3 e codigoAluno != 0) {
+      		escreva("Informe o código do ", contador + 1, "º aluno ou digite '0' para sair: ")
+		  	leia(codigoAluno)
+      
 
-		enquanto (contador != codigoAluno) {
-			escreva("Informe a ", contador + 1, "ª nota do aluno: ")
-			leia(nota)
-			soma = soma + nota
-			contador++
-
+			// Verificar o código do aluno é zero para sair do loop
 			se (codigoAluno == 0) {
 				pare
 			}	
+
+			contadorNota=0
+			soma=0.0
+
+			enquanto (contadorNota < 3) {
+			escreva("Informe a ", contadorNota + 1, "ª nota do aluno: ")
+			leia(nota)
+
+				// Verificar se a nota é valida (entre 0 e 10)
+				se (nota >= 0 e nota <= 10) {
+					soma = soma + nota
+					contadorNota++
+				} senao {
+					escreva("ERRO: Notá inválida. Informe uma nota entre 0 e 10.\n")
+				}
+			}
+      		contador++
 		}
+		media = soma / contadorNota
+
+		escreva("Código do aluno: ", codigoAluno, ".\n")
+		escreva("Média de notas: ", media, ".\n")
+		escreva("\n")	
 	}
 }
 /* $$$ Portugol Studio $$$ 
