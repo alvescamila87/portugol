@@ -19,8 +19,8 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro opcao=0, contador=0, candidato1=0, candidato2=0, candidato3=0, candidato4=0, nulo=0, emBranco=0
-
+		inteiro opcao=8, contador=0, candidato1=0, candidato2=0, candidato3=0, candidato4=0, nulo=0, emBranco=0, percentualNulo=0, percentualEmBranco=0
+		
 		enquanto (opcao != 0) {
 			escreva("ELEIÇÃO PRESIDENCIAL - Informe o seu candidato \n")
 			escreva("[1] - João \n")
@@ -30,48 +30,54 @@ programa
 			escreva("[5] - Nulo \n")
 			escreva("[6] - Em branco \n")
 			escreva("[0] - Sair \n")
+			leia(opcao)
 
 			escolha (opcao) {
 				caso 0: 
-					escreva("Programa finalizado com sucesso!")
+					escreva("Programa finalizado com sucesso! \n")
 				pare
 				caso 1: 
-					escreva("Voto no João realizado com sucesso!")
+					escreva("Voto no JOÃO realizado com sucesso! \n")
 					candidato1++
 				pare
 				caso 2:
-					escreva("Voto no Maria realizado com sucesso!")
+					escreva("Voto no MARIA realizado com sucesso! \n")
 					candidato2++
 				pare
 				caso 3:
-					escreva("Voto no Pedro realizado com sucesso!")
+					escreva("Voto no PEDRO realizado com sucesso! \n")
 					candidato3++
 				pare
 				caso 4:
-					escreva("Voto no Marcos realizado com sucesso!")
+					escreva("Voto no MARCOS realizado com sucesso! \n")
 					candidato4++
 				pare
 				caso 5:
-					escreva("Voto NULO realizado com sucesso!")
+					escreva("Voto NULO realizado com sucesso! \n")
 					nulo++
 				pare
 				caso 6:
-					escreva("Voto EM BRANCO realizado com sucesso!")
+					escreva("Voto EM BRANCO realizado com sucesso! \n")
 					emBranco++
 				pare
-				caso contrario: escreva("ERRO: Opção inválida!")
+				caso contrario: escreva("ERRO: Opção inválida! \n")
 			}
-			
 			contador++
-			
+			percentualNulo = (100 * nulo) / contador
+			percentualEmBranco = (100 * emBranco) / contador
+	
 		}
-		escreva("O total de votos: \n")
+		escreva("*************************************\n")
+		escreva("Total de votos contabilizado: \n")
 		escreva(" - Candidato 1 - JOÃO: ", candidato1, " votos. \n")
 		escreva(" - Candidato 2 - MARIA: ", candidato2, " votos. \n")
 		escreva(" - Candidato 3 - PEDRO: ", candidato3, " votos. \n")
 		escreva(" - Candidato 4 - MARCOS: ", candidato4, " votos. \n")
 		escreva(" - NULOS: ", nulo, ". \n")
 		escreva(" - EM BRANCO: ", emBranco, ". \n")
+		escreva("*************************************\n")
+		escreva("O percentual de nulos em relação ao total de votos é de: ", percentualNulo, "%. \n")
+		escreva("O percentual de brancos em relação ao total de votos é de: ", percentualEmBranco, "%. \n")
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -79,7 +85,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 678; 
+ * @POSICAO-CURSOR = 2531; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
