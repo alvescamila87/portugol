@@ -6,7 +6,22 @@ programa
 */	
 	funcao inicio()
 	{
-		escreva("Olá Mundo")
+		inteiro tamanho
+		escreva("informe o tamanho do tabuleiro")
+		leia(tamanho) 
+		para(inteiro linha = 0; linha < tamanho; linha++){
+			para(inteiro coluna = 0; coluna < tamanho; coluna++){
+				se(linha%2 == 0){
+					se(coluna % 2 == 0){escreva(" X ")	}
+					senao{escreva("O")}
+				}
+				senao{
+					se(coluna % 2 == 0){escreva(" O ")}
+					senao{escreva("X")}
+					}
+			}
+			escreva("\n")
+		}
 	}
 }
 
@@ -15,7 +30,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 242; 
+ * @POSICAO-CURSOR = 607; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
