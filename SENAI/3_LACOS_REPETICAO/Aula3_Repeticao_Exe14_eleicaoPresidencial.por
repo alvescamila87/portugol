@@ -61,6 +61,7 @@ programa
 					emBranco++
 				pare
 				caso contrario: escreva("ERRO: Opção inválida! \n")
+				contador--
 			}
 			contador++
 			percentualNulo = (100 * nulo) / contador
@@ -85,7 +86,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2531; 
+ * @POSICAO-CURSOR = 1741; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
