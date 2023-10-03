@@ -8,15 +8,16 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro x, y,z
-
-		para (x = 1; x < 10; x++) {
-			para(y = 1; y < 10; y++) {
+		
+		para (inteiro x = 1; x < 10; x++) {
+			escreva("TABUADA \n")
+			para(inteiro y = 1; y < 10; y++) {
 				escreva(x, " x ", y , " = ", x * y, "\n")
 				
 			}
 			escreva("\n")
-			para(y = 1; y < 10; y++)  {
+			escreva("DIVISÃO \n")
+			para(inteiro y = 1; y < 10; y++)  {
 				escreva(x * y, " / ", x , " = ", y, "\n")
 				
 			}
@@ -29,7 +30,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 354; 
+ * @POSICAO-CURSOR = 208; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
