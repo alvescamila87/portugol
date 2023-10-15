@@ -13,7 +13,7 @@ para que Zé seja maior que Chico.
 
 		
 
-		enquanto(medidaZe <= medidaChico) {
+		enquanto(medidaZe < medidaChico) {
 			medidaChico = medidaChico + constanteCrescimentoChico
 			medidaZe = medidaZe + constanteCrescimentoZe
 			contador++ 

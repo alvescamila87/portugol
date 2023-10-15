@@ -2,10 +2,10 @@ programa {
   funcao inicio() {
 
     inteiro contador, terreno
-    real medidaFrente, medidaFundo, area=0
+    real medidaFrente, medidaFundo, area=101
 
-    contador = 1
-    enquanto (area <= 100) {
+
+    enquanto (area > 100) {
 
       escreva("Informe o medida de FRENTE do terreno ", contador, " : \n")
       leia(medidaFrente)
@@ -13,8 +13,8 @@ programa {
       leia(medidaFundo)
       area = medidaFrente * medidaFundo
       escreva("área: ", area, "m². \n")
-      contador ++
-
+      
     }
   }
 }
+
