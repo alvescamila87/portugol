@@ -7,18 +7,30 @@ programa
 	funcao inicio()
 	{
 		inteiro tamanho
-		escreva("informe o tamanho do tabuleiro")
+
+		escreva("Informe o tamanho do tabuleiro: ")
 		leia(tamanho) 
+
 		para(inteiro linha = 0; linha < tamanho; linha++){
+
 			para(inteiro coluna = 0; coluna < tamanho; coluna++){
-				se(linha%2 == 0){
-					se(coluna % 2 == 0){escreva(" X ")	}
-					senao{escreva("O")}
-				}
-				senao{
-					se(coluna % 2 == 0){escreva(" O ")}
-					senao{escreva("X")}
+				
+				se(linha % 2 == 0){
+					se(coluna % 2 == 0){
+						escreva(" X ")	
 					}
+					senao {
+						escreva("O")
+					}
+				}
+				senao {
+					se(coluna % 2 == 0){
+						escreva(" O ")
+					}
+					senao{
+						escreva("X")
+					}
+				}
 			}
 			escreva("\n")
 		}

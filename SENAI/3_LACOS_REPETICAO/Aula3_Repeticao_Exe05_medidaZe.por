@@ -8,12 +8,12 @@ para que Zé seja maior que Chico.
 	
 	funcao inicio()
 	{
-		inteiro contador=1
+		inteiro contador=0
 		real medidaChico=1.50, medidaZe=1.10, constanteCrescimentoChico=0.02, constanteCrescimentoZe=0.03
 
 		
 
-		enquanto(medidaZe <= medidaChico) {
+		enquanto(medidaZe < medidaChico) {
 			medidaChico = medidaChico + constanteCrescimentoChico
 			medidaZe = medidaZe + constanteCrescimentoZe
 			contador++ 
