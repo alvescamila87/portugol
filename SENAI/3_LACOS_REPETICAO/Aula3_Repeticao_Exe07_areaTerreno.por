@@ -5,7 +5,7 @@ programa {
     real medidaFrente, medidaFundo, area=101
 
 
-    enquanto (area > 100) {
+    enquanto (area => 100) {
 
       escreva("Informe o medida de FRENTE do terreno ", contador, " : \n")
       leia(medidaFrente)
