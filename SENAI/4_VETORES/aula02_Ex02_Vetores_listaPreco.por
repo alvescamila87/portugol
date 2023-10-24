@@ -3,8 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro qtdProduto=50
-		real somaPrecos=0, vetorPrecos[10]
+		real somaPrecos=0.0, vetorPrecos[10]
 
 		para (inteiro contador=0; contador < 10; contador++) {
 			
@@ -23,7 +22,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 383; 
+ * @POSICAO-CURSOR = 54; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
