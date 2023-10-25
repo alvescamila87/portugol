@@ -14,23 +14,24 @@ programa
 
 		para(inteiro i = 0; i < 5; i++) {
 
-			escreva("\nO nome na ordem CRESCENTE é: ", vetorNome[i])
+			escreva("\nO nome na ordem DIGITADO é: ", vetorNome[i])
 		}
 
 		para(inteiro j = 4; j >= 0; j--) {
 
-			escreva("\nO nome na ordem DESCRENTE é: ", vetorNome[j])
+			escreva("\nO nome na ordem INVERTIDO é: ", vetorNome[j])
 		}
 	}
 }
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 336; 
+ * @POSICAO-CURSOR = 409; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vetorNome, 6, 9, 9}-{posicao, 8, 15, 7}-{i, 15, 15, 1}-{j, 20, 15, 1};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
