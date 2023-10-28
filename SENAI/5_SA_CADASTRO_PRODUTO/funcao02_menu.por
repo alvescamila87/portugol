@@ -5,19 +5,21 @@ programa
 	{
 		imprimirLinha()
 		menu()
-		imprimirLinha()
 	}
 
 	funcao vazio imprimirLinha() {
 		escreva("----------------------------------------------\n")
 	}
+	
+	funcao vazio menu() {	
 
-	funcao vazio menu() {
+	inteiro opcao = 10
 
-		inteiro opcao = 10
+	enquanto(opcao < 1 ou opcao > 9) {
+
 
 		escreva("                 MENU DE OPÇÕES           \n")
-		escreva("----------------------------------------------\n")
+		imprimirLinha()
 		escreva("\n")
 		escreva("[1] - Inserir produto \n")
 		escreva("[2] - Atualizar produto \n")
@@ -28,61 +30,80 @@ programa
 		escreva("[7] - Adicionar produto do estoque \n")
 		escreva("[8] - Remover produto do estoque \n")
 		escreva("[9] - Sair do programa \n")
-		escreva("\n")
-		escreva("----------------------------------------------\n")
-		escreva("Digite uma opção: \n")
-		escreva("----------------------------------------------\n")
+		escreva("\n")		
+		imprimirLinha()
+		escreva("Digite uma das opções: ")
 		leia(opcao)
 
-		enquanto(verdadeiro) {
 			
-				
-			escolha(opcao) {
+		escolha(opcao) {
 				caso 1: 
-					escreva("Chamou a função 1 \n")
+					escreva("\n")
+					escreva("Chama a função 1 \n")
+					escreva("\n")
 				pare
 				caso 2: 
-					escreva("Chamou a função 2 \n")
+					escreva("\n")
+					escreva("Chama a função 2 \n")
+					escreva("\n")
 				pare
 				caso 3: 
-					escreva("Chamou a função 3 \n")
+					escreva("\n")
+					escreva("Chama a função 3 \n")
+					escreva("\n")
 				pare
 				caso 4: 
-					escreva("Chamou a função 4 \n")
+					escreva("\n")
+					escreva("Chama a função 4 \n")
+					escreva("\n")
 				pare
 				caso 5: 
-					escreva("Chamou a função 5 \n")
+					escreva("\n")
+					escreva("Chama a função 5 \n")
+					escreva("\n")
 				pare
 				caso 6: 
-					escreva("Chamou a função 6 \n")
+					escreva("\n")
+					escreva("Chama a função 6 \n")
+					escreva("\n")
 				pare
 				caso 7: 
-					escreva("Chamou a função 7 \n")
+					escreva("\n")
+					escreva("Chama a função 7 \n")
+					escreva("\n")
 				pare
 				caso 8: 
-					escreva("Chamou a função 8 \n")
+					escreva("\n")
+					escreva("Chama a função 8 \n")
+					escreva("\n")
 				pare
 				caso 9:
+					escreva("\n")
+					imprimirLinha()
 					escreva("PROGRAMA FINALIZADO! \n")
+					escreva("Obrigado! Volte sempre! \n")
+					imprimirLinha()
+					escreva("\n")
 				pare
 				caso contrario: 
+					escreva("\n")
 					escreva("[ERRO] Opção inválida. Tente novamente. \n")
+					escreva("\n")
 
-				se (opcao == 9) {
-					pare
-				}
-				
-			}
 		}
 		
 	}
+
+	}
+		
 }
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1665; 
+ * @POSICAO-CURSOR = 162; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
