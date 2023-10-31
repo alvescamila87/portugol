@@ -3,12 +3,11 @@ programa
 	
 	funcao inicio()
 	{
-		imprimirLinha()
 		menu()
 	}
 
 	funcao vazio imprimirLinha() {
-		escreva("----------------------------------------------\n")
+		escreva("_________________________________________\n")
 	}
 	
 	funcao vazio menu() {	
@@ -18,22 +17,24 @@ programa
 	enquanto(opcao < 1 ou opcao > 9) {
 
 
-		escreva("                 MENU DE OPÇÕES           \n")
-		imprimirLinha()
-		escreva("\n")
-		escreva("[1] - Inserir produto \n")
-		escreva("[2] - Atualizar produto \n")
-		escreva("[3] - Excluir produto \n")
-		escreva("[4] - Exibir todos os produtos \n")
-		escreva("[5] - Exibir produtos por ordem \n")
-		escreva("[6] - Exibir todos por classificação \n")
-		escreva("[7] - Adicionar produto do estoque \n")
-		escreva("[8] - Remover produto do estoque \n")
-		escreva("[9] - Sair do programa \n")
-		escreva("\n")		
-		imprimirLinha()
-		escreva("Digite uma das opções: ")
-		leia(opcao)
+	   escreva("_________________________________________\n")
+        escreva("|                                       |\n")
+        escreva("|              MENU DE OPÇÕES           |\n")
+        escreva("|_______________________________________|\n")
+        escreva("|                                       |\n")
+        escreva("| [1] - Inserir produto                 |\n")
+        escreva("| [2] - Atualizar produto               |\n")
+        escreva("| [3] - Excluir produto                 |\n")
+        escreva("| [4] - Exibir todos os produtos        |\n")
+        escreva("| [5] - Exibir produtos por ordem       |\n")
+        escreva("| [6] - Exibir todos por classificação  |\n")
+        escreva("| [7] - Adicionar produto do estoque    |\n")
+        escreva("| [8] - Remover produto do estoque      |\n")
+        escreva("| [9] - Sair do programa                |\n")
+        escreva("|_______________________________________|\n")
+        escreva("\n")        
+        escreva("Digite uma das opções: ")
+        leia(opcao)
 
 			
 		escolha(opcao) {
@@ -80,6 +81,7 @@ programa
 				caso 9:
 					escreva("\n")
 					imprimirLinha()
+					escreva("\n")
 					escreva("PROGRAMA FINALIZADO! \n")
 					escreva("Obrigado! Volte sempre! \n")
 					imprimirLinha()
@@ -103,7 +105,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 162; 
+ * @POSICAO-CURSOR = 2120; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
