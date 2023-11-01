@@ -1,11 +1,14 @@
 programa
 {
+	logico inserirProdutoValidacao=falso 	
 	
 	funcao inicio()
 	{
 		login()
 		menu()
-		inserirProduto()
+		se(inserirProdutoValidacao) {
+			menu()
+		} 
 	}
 
 	funcao vazio login() {
@@ -126,9 +129,9 @@ programa
 					escreva("[ERRO] Opção inválida. Tente novamente. \n")
 					escreva("\n")
 
-		}
+			}
 		
-	}
+		}
 
 	}
 
@@ -155,47 +158,53 @@ programa
 				
 			}
 	}
-	
-	enquanto(verdadeiro) {
+
 	// classificação de produto
-	escreva("\n")
-	escreva("Classificação do produto \n")
-	escreva(" [A] - Primeira linha \n")
-	escreva(" [B] - Linha regular linha \n")
-	escreva(" [C] - Segunda linha \n")
-	escreva("\n")
-	escreva("Informe a classificação do produto em letra maiúscula: ")
-	leia(vetorClassificacaoProduto[contadorClassificacao]) 
-
-
-	se(vetorClassificacaoProduto[contadorClassificacao] == "A") {
-			escreva("\n")
-			escreva("Classificação de produto: PRIMEIRA LINHA \n")
-			vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
-			contadorClassificacao++
-			escreva("\n")
-			pare
-	} senao se (vetorClassificacaoProduto[contadorClassificacao] == "B") {
-			escreva("\n")
-			escreva("Classificação de produto: LINHA REGULAR \n")
-			vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
-			contadorClassificacao++
-			escreva("\n")
-			pare
-	} senao se (vetorClassificacaoProduto[contadorClassificacao] == "C") {
-			escreva("\n")
-			escreva("Classificação de produto: SEGUNDA LINHA \n")
-			vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
-			contadorClassificacao++
-			escreva("\n")
-			pare
-	} senao {
-			escreva("\n")
-			escreva("[ERRO] Classificação inválida. Tente novamente! \n")
-			escreva("\n")		
-	}
+	enquanto(verdadeiro) {
 	
-	}	
+		escreva("_______________________________________________________\n")
+		escreva("|                                                     |\n")
+		escreva("|              Classificação do produto               |\n")
+		escreva("|_____________________________________________________|\n")
+		escreva("|                                                     |\n")
+		escreva("|    [A] - Primeira linha                             |\n")
+		escreva("|    [B] - Linha regular linha                        |\n")
+		escreva("|    [C] - Segunda linha                              |\n")
+		escreva("|_____________________________________________________|\n")
+		escreva("\n")
+		escreva("Informe a classificação do produto em letra maiúscula: ")
+		leia(vetorClassificacaoProduto[contadorClassificacao]) 
+
+
+			se(vetorClassificacaoProduto[contadorClassificacao] == "A") {
+					escreva("\n")
+					escreva("Classificação de produto: PRIMEIRA LINHA \n")
+					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
+					contadorClassificacao++
+					escreva("\n")
+					pare
+			} senao se (vetorClassificacaoProduto[contadorClassificacao] == "B") {
+					escreva("\n")
+					escreva("Classificação de produto: LINHA REGULAR \n")
+					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
+					contadorClassificacao++
+					escreva("\n")
+					pare
+			} senao se (vetorClassificacaoProduto[contadorClassificacao] == "C") {
+					escreva("\n")
+					escreva("Classificação de produto: SEGUNDA LINHA \n")
+					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
+					contadorClassificacao++
+					escreva("\n")
+					pare
+			} senao {
+					escreva("\n")
+					escreva("[ERRO] Classificação inválida. Tente novamente! \n")
+					escreva("\n")		
+			}
+	
+	}
+	inserirProdutoValidacao = verdadeiro
 		
 	}
 		
@@ -206,7 +215,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1897; 
+ * @POSICAO-CURSOR = 131; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
