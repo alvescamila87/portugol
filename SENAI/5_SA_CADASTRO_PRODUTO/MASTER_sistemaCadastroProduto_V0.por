@@ -155,15 +155,16 @@ programa
 	enquanto(verdadeiro) {
 		
 		escreva("Informe a descrição do produto: ")
-		leia(vetorDescricaoProduto[indiceProduto])	
+		leia(vetorDescricaoProduto[contadorProduto])	
 			
-			se(vetorDescricaoProduto[indiceProduto] == "" ou vetorDescricaoProduto[indiceProduto] == " ") {
+			se(vetorDescricaoProduto[contadorProduto] == "" ou vetorDescricaoProduto[contadorProduto] == " ") {
 				escreva("[ERRO] Descrição inválida. Tente novamente. \n")
 			} senao {
-				vetorDescricaoProduto[indiceProduto] = vetorDescricaoProduto[indiceProduto]
+				vetorDescricaoProduto[contadorProduto] = vetorDescricaoProduto[contadorProduto]
 				pularLinha()
-				escreva("Produto: ", vetorDescricaoProduto[indiceProduto], " adicionado com sucesso!")
+				escreva("Produto: ", vetorDescricaoProduto[contadorProduto], " adicionado com sucesso!")
 				pularLinha()
+				contadorProduto++
 				pare
 				
 			}
@@ -183,28 +184,28 @@ programa
 		escreva("|_____________________________________________________|\n")
 		escreva("\n")
 		escreva("Informe a classificação do produto em letra maiúscula: ")
-		leia(vetorClassificacaoProduto[indiceProduto])
+		leia(vetorClassificacaoProduto[contadorClassificacao])
 
 
-			se(vetorClassificacaoProduto[indiceProduto] == "A") {
+			se(vetorClassificacaoProduto[contadorClassificacao] == "A") {
 					pularLinha()
 					escreva("Classificação de produto: PRIMEIRA LINHA \n")
-					vetorClassificacaoProduto[indiceProduto] = vetorClassificacaoProduto[indiceProduto]
-					indiceProduto++
+					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
+					contadorClassificacao++
 					pularLinha()
 					pare
-			} senao se (vetorClassificacaoProduto[indiceProduto] == "B") {
+			} senao se (vetorClassificacaoProduto[contadorClassificacao] == "B") {
 					pularLinha()
 					escreva("Classificação de produto: LINHA REGULAR \n")
-					vetorClassificacaoProduto[indiceProduto] = vetorClassificacaoProduto[indiceProduto]
-					indiceProduto++
+					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
+					contadorClassificacao++
 					pularLinha()
 					pare
-			} senao se (vetorClassificacaoProduto[indiceProduto] == "C") {
+			} senao se (vetorClassificacaoProduto[contadorClassificacao] == "C") {
 					pularLinha()
 					escreva("Classificação de produto: SEGUNDA LINHA \n")
-					vetorClassificacaoProduto[indiceProduto] = vetorClassificacaoProduto[indiceProduto]
-					indiceProduto++
+					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
+					contadorClassificacao++
 					pularLinha()
 					pare
 			} senao {
@@ -286,6 +287,8 @@ programa
 		}
 
 	}	
+			
+	}	
 
 	funcao vazio exibirProdutos() {
 
@@ -305,7 +308,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 535; 
+ * @POSICAO-CURSOR = 206; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
