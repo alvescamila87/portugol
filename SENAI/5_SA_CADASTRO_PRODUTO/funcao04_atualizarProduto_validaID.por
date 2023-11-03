@@ -1,9 +1,9 @@
 programa
 {
-	
-	//logico inserirProdutoValidacao=falso, atualizarProdutoValidacao = falso
 	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], loginBD="admin", senhaBD="12345"
-	inteiro contadorProduto=0,contadorClassificacao=0, indiceProduto=0, opcao=0 	
+	inteiro indiceProduto=0, opcao=0, vetorIdProduto[999], idProduto=0
+	logico buscaProduto=falso
+		
 	
 	funcao inicio()
 	{
@@ -159,16 +159,21 @@ programa
 	enquanto(verdadeiro) {
 		
 		escreva("Informe a descrição do produto: ")
-		leia(vetorDescricaoProduto[contadorProduto])	
+		leia(vetorDescricaoProduto[indiceProduto])	
 			
-			se(vetorDescricaoProduto[contadorProduto] == "" ou vetorDescricaoProduto[contadorProduto] == " ") {
+			se(vetorDescricaoProduto[indiceProduto] == "" ou vetorDescricaoProduto[indiceProduto] == " ") {
+				
+				pularLinha()
 				escreva("[ERRO] Descrição inválida. Tente novamente. \n")
+				pularLinha()
+				
 			} senao {
-				vetorDescricaoProduto[contadorProduto] = vetorDescricaoProduto[contadorProduto]
+				
+				vetorDescricaoProduto[indiceProduto] = vetorDescricaoProduto[indiceProduto]
+				vetorIdProduto[indiceProduto] = indiceProduto
 				pularLinha()
-				escreva("Produto: ", vetorDescricaoProduto[contadorProduto], " adicionado com sucesso!")
+				escreva("Produto: ", vetorDescricaoProduto[indiceProduto], " adicionado com sucesso!")
 				pularLinha()
-				contadorProduto++
 				pare
 				
 			}
@@ -188,28 +193,28 @@ programa
 		escreva("|_____________________________________________________|\n")
 		escreva("\n")
 		escreva("Informe a classificação do produto em letra maiúscula: ")
-		leia(vetorClassificacaoProduto[contadorClassificacao])
+		leia(vetorClassificacaoProduto[indiceProduto])
 
 
-			se(vetorClassificacaoProduto[contadorClassificacao] == "A") {
+			se(vetorClassificacaoProduto[indiceProduto] == "A") {
 					pularLinha()
 					escreva("Classificação de produto: PRIMEIRA LINHA \n")
-					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
-					contadorClassificacao++
+					vetorClassificacaoProduto[indiceProduto] = vetorClassificacaoProduto[indiceProduto]
+					indiceProduto++
 					pularLinha()
 					pare
-			} senao se (vetorClassificacaoProduto[contadorClassificacao] == "B") {
+			} senao se (vetorClassificacaoProduto[indiceProduto] == "B") {
 					pularLinha()
 					escreva("Classificação de produto: LINHA REGULAR \n")
-					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
-					contadorClassificacao++
+					vetorClassificacaoProduto[indiceProduto] = vetorClassificacaoProduto[indiceProduto]
+					indiceProduto++
 					pularLinha()
 					pare
-			} senao se (vetorClassificacaoProduto[contadorClassificacao] == "C") {
+			} senao se (vetorClassificacaoProduto[indiceProduto] == "C") {
 					pularLinha()
 					escreva("Classificação de produto: SEGUNDA LINHA \n")
-					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
-					contadorClassificacao++
+					vetorClassificacaoProduto[indiceProduto] = vetorClassificacaoProduto[indiceProduto]
+					indiceProduto++
 					pularLinha()
 					pare
 			} senao {
@@ -227,56 +232,71 @@ programa
 
 				
 		escreva("Informe o código do produto a ser alterado: ")
-		leia(indiceProduto)
+		leia(idProduto)
 
-		
-		se(indiceProduto >= 0 e indiceProduto < 999) {
-			
-			pularLinha()
-			imprimirLinha()
-			pularLinha()
-			escreva("Produto detectado: " + vetorDescricaoProduto[indiceProduto], "\n")	
-			pularLinha()
-			imprimirLinha()
-			pularLinha()
-			
-			enquanto(verdadeiro) {
-				
-				escreva("Informe a nova descrição do produto: ")
-				leia(vetorDescricaoProduto[indiceProduto])
+		// valida se é um número válido do vetor
+		se(idProduto >= 0 e idProduto < 999) {
 
+			para(inteiro contador = 0; contador < 999; contador++) {
+
+				// valida se o índice informado possui produto cadastrado nessa posição do vetor
+				se(idProduto == vetorIdProduto[contador]) {
 					
-					se(vetorDescricaoProduto[indiceProduto] == "" ou vetorDescricaoProduto[indiceProduto] == " ") {
-						
-						pularLinha()
-						escreva("[ERRO] Descrição inválida. Tente novamente. \n")
-						pularLinha()
-						
-					} senao {
-						
-						vetorDescricaoProduto[indiceProduto] = vetorDescricaoProduto[indiceProduto]
-						pularLinha()
-						escreva("Produto: ", vetorDescricaoProduto[indiceProduto], " com descrição alterada com sucesso!")
-						pularLinha()
-						indiceProduto++
-						pare		
-								
+					//buscaProduto = verdadeiro 
+					
+					pularLinha()
+					imprimirLinha()
+					pularLinha()
+					escreva("ID Produto detectado: " + vetorIdProduto[idProduto], "\n")
+					escreva("Produto detectado: " + vetorDescricaoProduto[idProduto], "\n")
+					pularLinha()
+					imprimirLinha()
+					pularLinha()
+
+					enquanto(verdadeiro) {
+				
+						escreva("Informe a nova descrição do produto: ")
+						leia(vetorDescricaoProduto[idProduto])
+
+							// valida espaços em branco ou enter do teclado para não deixar a descriçaõ vazia
+							se(vetorDescricaoProduto[idProduto] == "" ou vetorDescricaoProduto[idProduto] == " ") {
+							
+								pularLinha()
+								escreva("[ERRO] Descrição inválida. Tente novamente. \n")
+								pularLinha()
+							
+							} senao {
+							
+								vetorDescricaoProduto[idProduto] = vetorDescricaoProduto[idProduto]
+								pularLinha()
+								escreva("ID Produto: ", vetorIdProduto[idProduto], " ")	
+								escreva("Produto: ", vetorDescricaoProduto[idProduto], " com descrição alterada com sucesso!")								
+								pularLinha()
+								pare		
+									
+						}
 					}
+					
+				} senao {
+
+					pularLinha()
+					escreva("[ERRO] Código de produto não cadastrado. ")
+					pularLinha()
+					pare
+				}
+							
 			}
 
+			
 		} senao {
-
+			
 			pularLinha()
 			escreva("[ERRO] Código de produto inexistente. ")
 			pularLinha()
-				
-		}
-
 			
 		}
 
-		
-		
+	}	
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -284,9 +304,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 7175; 
+ * @POSICAO-CURSOR = 11; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 5, 8, 21}-{vetorClassificacaoProduto, 5, 36, 25}-{contadorProduto, 6, 9, 15}-{contadorClassificacao, 6, 27, 21}-{indiceProduto, 6, 52, 13}-{opcao, 6, 69, 5};
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 3, 8, 21}-{vetorClassificacaoProduto, 3, 36, 25}-{indiceProduto, 4, 9, 13}-{opcao, 4, 26, 5}-{vetorIdProduto, 4, 35, 14}-{idProduto, 4, 56, 9}-{contador, 240, 16, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
