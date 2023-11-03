@@ -33,14 +33,18 @@ programa
 	// classificação de produto
 	enquanto(verdadeiro) {
 	
-		escreva("\n")
-		escreva("Classificação do produto \n")
-		escreva(" [A] - Primeira linha \n")
-		escreva(" [B] - Linha regular linha \n")
-		escreva(" [C] - Segunda linha \n")
-		escreva("\n")
-		escreva("Informe a classificação do produto em letra maiúscula: ")
-		leia(vetorClassificacaoProduto[contadorClassificacao]) 
+		 escreva("_____________________________________________\n")
+		 escreva("|                                           |\n")
+		 escreva("|          Classificação do produto         |\n")
+		 escreva("|___________________________________________|\n")
+		 escreva("|                                 	         |\n")
+		 escreva("|  [A] - Primeira linha                     |\n")
+		 escreva("|  [B] - Linha regular linha                |\n")
+		 escreva("|  [C] - Segunda linha                      |\n")
+		 escreva("|___________________________________________|\n")
+		 escreva("\n")
+		 escreva("Informe a classificação do produto: ")
+		 leia(vetorClassificacaoProduto[contadorClassificacao]) 
 	
 			se(vetorClassificacaoProduto[contadorClassificacao] == "A") {
 					escreva("\n")
@@ -78,7 +82,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1173; 
+ * @POSICAO-CURSOR = 913; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

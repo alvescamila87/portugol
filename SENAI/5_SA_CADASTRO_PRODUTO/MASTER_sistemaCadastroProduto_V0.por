@@ -11,10 +11,22 @@ programa
 		} 
 	}
 
+	// Função Geral 1 - Imprimir linha
+	funcao vazio imprimirLinha() {
+		escreva("_________________________________________\n")
+	}
+
+	// Função Geral 2 - Pular linha
+	funcao vazio pularLinha() {
+		escreva("\n")
+	}
+	
+	// Autenticação do usuário no sistema
 	funcao vazio login() {
 		
 	cadeia loginBD="admin", senhaBD="12345", login="", senha=""
-		
+
+	// Validação de username
 	enquanto(login != loginBD) {
 		
 		escreva("Informe o login de usuário: ")
@@ -27,6 +39,7 @@ programa
 		}
 	}
 
+	// Validação de password
 	enquanto(senha != senhaBD) {
 	
 		escreva("Informe o senha de usuário: ")
@@ -39,13 +52,17 @@ programa
 		}
 			
 	}
-		
+	// Mensagem de boas vindas ao logar
+	pularLinha()
+	imprimirLinha()
+	pularLinha()
+	escreva(" [SCP] - Sistema de Cadastro de Produto")
+	pularLinha()
+	imprimirLinha()
+	pularLinha()	
 	}
 
-	funcao vazio imprimirLinha() {
-		escreva("_________________________________________\n")
-	}
-	
+	// Menu de opções do sistema
 	funcao vazio menu() {	
 
 	inteiro opcao = 10
@@ -68,66 +85,64 @@ programa
         escreva("| [8] - Remover produto do estoque      |\n")
         escreva("| [9] - Sair do programa                |\n")
         escreva("|_______________________________________|\n")
-        escreva("\n")        
+        pularLinha()      
         escreva("Digite uma das opções: ")
         leia(opcao)
 
 			
 		escolha(opcao) {
 				caso 1: 
-					escreva("\n")
-					escreva("Chama a função 1 \n")
-					escreva("\n")
+					pularLinha()
 					inserirProduto()
 				pare
 				caso 2: 
-					escreva("\n")
+					pularLinha()
 					escreva("Chama a função 2 \n")
-					escreva("\n")
+					pularLinha()
 				pare
 				caso 3: 
-					escreva("\n")
+					pularLinha()
 					escreva("Chama a função 3 \n")
-					escreva("\n")
+					pularLinha()
 				pare
 				caso 4: 
-					escreva("\n")
+					pularLinha()
 					escreva("Chama a função 4 \n")
-					escreva("\n")
+					pularLinha()
 				pare
 				caso 5: 
-					escreva("\n")
+					pularLinha()
 					escreva("Chama a função 5 \n")
-					escreva("\n")
+					pularLinha()
 				pare
 				caso 6: 
-					escreva("\n")
+					pularLinha()
 					escreva("Chama a função 6 \n")
-					escreva("\n")
+					pularLinha()
 				pare
 				caso 7: 
-					escreva("\n")
+					pularLinha()
 					escreva("Chama a função 7 \n")
-					escreva("\n")
+					pularLinha()
 				pare
 				caso 8: 
-					escreva("\n")
+					pularLinha()
 					escreva("Chama a função 8 \n")
-					escreva("\n")
+					pularLinha()
 				pare
 				caso 9:
-					escreva("\n")
+					pularLinha()
 					imprimirLinha()
-					escreva("\n")
+					pularLinha()
 					escreva("PROGRAMA FINALIZADO! \n")
 					escreva("Obrigado! Volte sempre! \n")
 					imprimirLinha()
-					escreva("\n")
+					pularLinha()
 				pare
 				caso contrario: 
-					escreva("\n")
+					pularLinha()
 					escreva("[ERRO] Opção inválida. Tente novamente. \n")
-					escreva("\n")
+					pularLinha()
 
 			}
 		
@@ -150,9 +165,9 @@ programa
 				escreva("[ERRO] Descrição inválida. Tente novamente. \n")
 			} senao {
 				vetorDescricaoProduto[contadorProduto] = vetorDescricaoProduto[contadorProduto]
-				escreva("\n")
+				pularLinha()
 				escreva("Produto: ", vetorDescricaoProduto[contadorProduto], " adicionado com sucesso!")
-				escreva("\n")
+				pularLinha()
 				contadorProduto++
 				pare
 				
@@ -173,34 +188,34 @@ programa
 		escreva("|_____________________________________________________|\n")
 		escreva("\n")
 		escreva("Informe a classificação do produto em letra maiúscula: ")
-		leia(vetorClassificacaoProduto[contadorClassificacao]) 
+		leia(vetorClassificacaoProduto[contadorClassificacao])
 
 
 			se(vetorClassificacaoProduto[contadorClassificacao] == "A") {
-					escreva("\n")
+					pularLinha()
 					escreva("Classificação de produto: PRIMEIRA LINHA \n")
 					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
 					contadorClassificacao++
-					escreva("\n")
+					pularLinha()
 					pare
 			} senao se (vetorClassificacaoProduto[contadorClassificacao] == "B") {
-					escreva("\n")
+					pularLinha()
 					escreva("Classificação de produto: LINHA REGULAR \n")
 					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
 					contadorClassificacao++
-					escreva("\n")
+					pularLinha()
 					pare
 			} senao se (vetorClassificacaoProduto[contadorClassificacao] == "C") {
-					escreva("\n")
+					pularLinha()
 					escreva("Classificação de produto: SEGUNDA LINHA \n")
 					vetorClassificacaoProduto[contadorClassificacao] = vetorClassificacaoProduto[contadorClassificacao]
 					contadorClassificacao++
-					escreva("\n")
+					pularLinha()
 					pare
 			} senao {
-					escreva("\n")
+					pularLinha()
 					escreva("[ERRO] Classificação inválida. Tente novamente! \n")
-					escreva("\n")		
+					pularLinha()	
 			}
 	
 	}
@@ -215,7 +230,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 131; 
+ * @POSICAO-CURSOR = 4916; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
