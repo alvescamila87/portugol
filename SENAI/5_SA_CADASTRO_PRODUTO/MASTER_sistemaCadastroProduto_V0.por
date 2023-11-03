@@ -1,14 +1,14 @@
 programa
 {
-	logico inserirProdutoValidacao=falso 	
+	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], loginBD="admin", senhaBD="12345"
+	inteiro contadorProduto=0,contadorClassificacao=0, indiceProduto=0, opcao=0 		
 	
 	funcao inicio()
 	{
 		login()
-		menu()
-		se(inserirProdutoValidacao) {
-			menu()
-		} 
+		enquanto(verdadeiro) {
+			menu() 
+		}
 	}
 
 	// Função Geral 1 - Imprimir linha
@@ -24,7 +24,7 @@ programa
 	// Autenticação do usuário no sistema
 	funcao vazio login() {
 		
-	cadeia loginBD="admin", senhaBD="12345", login="", senha=""
+	cadeia login="", senha=""
 
 	// Validação de username
 	enquanto(login != loginBD) {
@@ -97,8 +97,7 @@ programa
 				pare
 				caso 2: 
 					pularLinha()
-					escreva("Chama a função 2 \n")
-					pularLinha()
+					atualizarProduto()
 				pare
 				caso 3: 
 					pularLinha()
@@ -107,8 +106,7 @@ programa
 				pare
 				caso 4: 
 					pularLinha()
-					escreva("Chama a função 4 \n")
-					pularLinha()
+					exibirProdutos()
 				pare
 				caso 5: 
 					pularLinha()
@@ -151,9 +149,6 @@ programa
 	}
 
 	funcao vazio inserirProduto() {
-
-	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999]
-	inteiro contadorProduto=0,contadorClassificacao=0
 
 	// Colocando produto no vetor
 	enquanto(verdadeiro) {
@@ -219,8 +214,58 @@ programa
 			}
 	
 	}
-	inserirProdutoValidacao = verdadeiro
 		
+	}
+
+	funcao vazio atualizarProduto() {
+				
+		escreva("Informe o código do produto a ser atualizado: ")
+		leia(indiceProduto)
+
+		pularLinha()
+		imprimirLinha()
+		pularLinha()
+		escreva("Produto encontrado: " + vetorDescricaoProduto[indiceProduto], "\n")	
+		pularLinha()
+		imprimirLinha()
+		pularLinha()
+
+		enquanto(verdadeiro) {
+			escreva("Informe a nova descrição do produto: ")
+			leia(vetorDescricaoProduto[indiceProduto])
+
+			se(vetorDescricaoProduto[indiceProduto] == "" ou vetorDescricaoProduto[indiceProduto] == " ") {
+				escreva("[ERRO] Descrição inválida. Tente novamente. \n")
+			} senao {
+				vetorDescricaoProduto[indiceProduto] = vetorDescricaoProduto[indiceProduto]
+				pularLinha()
+				escreva("Produto: ", vetorDescricaoProduto[indiceProduto], " com descrição atualizada com sucesso!")
+				pularLinha()
+				indiceProduto++
+				pare				
+			}
+			
+		}
+
+		para(inteiro x = 0; x < 10; x++) {
+
+			pularLinha()
+			escreva("produto sem validação: " + vetorDescricaoProduto[x], "\n")	
+
+			
+		} 
+		
+	}
+
+	funcao vazio exibirProdutos() {
+
+		para(inteiro x = 0; x < 10; x++) {
+
+			escreva("Código produto: ", x, " Produto:", vetorDescricaoProduto[x], "\n")
+
+			
+		} 
+		pularLinha()
 	}
 		
 }
@@ -230,7 +275,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4916; 
+ * @POSICAO-CURSOR = 6749; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
