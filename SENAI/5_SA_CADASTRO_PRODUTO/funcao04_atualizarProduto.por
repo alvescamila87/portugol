@@ -226,66 +226,56 @@ programa
 	funcao vazio atualizarProduto() {
 
 				
-		escreva("Informe o código do produto a ser atualizado: ")
+		escreva("Informe o código do produto a ser alterado: ")
 		leia(indiceProduto)
 
-		pularLinha()
-		imprimirLinha()
-		pularLinha()
-		escreva("produto detectado 1: " + vetorDescricaoProduto[indiceProduto], "\n")	
-		pularLinha()
-		imprimirLinha()
-		pularLinha()
+		
+		se(indiceProduto >= 0 e indiceProduto < 999) {
+			
+			pularLinha()
+			imprimirLinha()
+			pularLinha()
+			escreva("Produto detectado: " + vetorDescricaoProduto[indiceProduto], "\n")	
+			pularLinha()
+			imprimirLinha()
+			pularLinha()
+			
+			enquanto(verdadeiro) {
+				
+				escreva("Informe a nova descrição do produto: ")
+				leia(vetorDescricaoProduto[indiceProduto])
 
-		enquanto(verdadeiro) {
-			escreva("Informe a nova descrição do produto: ")
-			leia(vetorDescricaoProduto[indiceProduto])
-
-			se(vetorDescricaoProduto[indiceProduto] == "" ou vetorDescricaoProduto[indiceProduto] == " ") {
-				escreva("[ERRO] Descrição inválida. Tente novamente. \n")
-			} senao {
-				vetorDescricaoProduto[indiceProduto] = vetorDescricaoProduto[indiceProduto]
-				pularLinha()
-				escreva("Produto: ", vetorDescricaoProduto[indiceProduto], " com descrição atualizada com sucesso!")
-				pularLinha()
-				indiceProduto++
-				pare				
+					
+					se(vetorDescricaoProduto[indiceProduto] == "" ou vetorDescricaoProduto[indiceProduto] == " ") {
+						
+						pularLinha()
+						escreva("[ERRO] Descrição inválida. Tente novamente. \n")
+						pularLinha()
+						
+					} senao {
+						
+						vetorDescricaoProduto[indiceProduto] = vetorDescricaoProduto[indiceProduto]
+						pularLinha()
+						escreva("Produto: ", vetorDescricaoProduto[indiceProduto], " com descrição alterada com sucesso!")
+						pularLinha()
+						indiceProduto++
+						pare		
+								
+					}
 			}
 
+		} senao {
 
+			pularLinha()
+			escreva("[ERRO] Código de produto inexistente. ")
+			pularLinha()
+				
+		}
 
 			
 		}
 
-		//para(inteiro x = indiceProduto; x < 999; x++) {
-
-								
-		//	escreva("Informe a nova descrição do produto: ")
-		//	leia(vetorDescricaoProduto[indiceProduto])
-		//	pularLinha()
-		//	imprimirLinha()
-		//	pularLinha()	
-		//	escreva("produto atualizado com sucesso: " + vetorDescricaoProduto[indiceProduto], "\n")
-		//	pularLinha()
-		//	imprimirLinha()
-		//	pularLinha()
-			
-		//} 
-		//pularLinha()
-		//escreva("produtos cadastrados no vetor: \n")
-		//pularLinha()
-
-		// Listar produtos cadastrados no vetor
-		para(inteiro x = 0; x < 10; x++) {
-
-			pularLinha()
-			escreva("produto sem validação: " + vetorDescricaoProduto[x], "\n")	
-
-			
-		} 
-		//inserirProdutoValidacao = verdadeiro
 		
-	}
 		
 }
 
@@ -294,9 +284,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 7457; 
+ * @POSICAO-CURSOR = 7175; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 5, 8, 21}-{vetorClassificacaoProduto, 5, 36, 25}-{opcao, 6, 69, 5};
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 5, 8, 21}-{vetorClassificacaoProduto, 5, 36, 25}-{contadorProduto, 6, 9, 15}-{contadorClassificacao, 6, 27, 21}-{indiceProduto, 6, 52, 13}-{opcao, 6, 69, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */

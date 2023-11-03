@@ -218,44 +218,55 @@ programa
 	}
 
 	funcao vazio atualizarProduto() {
+
+					
+	escreva("Informe o código do produto a ser alterado: ")
+	leia(indiceProduto)
+
+		
+		se(indiceProduto >= 0 e indiceProduto < 999) {
 				
-		escreva("Informe o código do produto a ser atualizado: ")
-		leia(indiceProduto)
+			pularLinha()
+			imprimirLinha()
+			pularLinha()
+			escreva("Produto detectado: " + vetorDescricaoProduto[indiceProduto], "\n")	
+			pularLinha()
+			imprimirLinha()
+			pularLinha()
+				
+			enquanto(verdadeiro) {
+					
+				escreva("Informe a nova descrição do produto: ")
+				leia(vetorDescricaoProduto[indiceProduto])
 
-		pularLinha()
-		imprimirLinha()
-		pularLinha()
-		escreva("Produto encontrado: " + vetorDescricaoProduto[indiceProduto], "\n")	
-		pularLinha()
-		imprimirLinha()
-		pularLinha()
-
-		enquanto(verdadeiro) {
-			escreva("Informe a nova descrição do produto: ")
-			leia(vetorDescricaoProduto[indiceProduto])
-
-			se(vetorDescricaoProduto[indiceProduto] == "" ou vetorDescricaoProduto[indiceProduto] == " ") {
-				escreva("[ERRO] Descrição inválida. Tente novamente. \n")
-			} senao {
-				vetorDescricaoProduto[indiceProduto] = vetorDescricaoProduto[indiceProduto]
-				pularLinha()
-				escreva("Produto: ", vetorDescricaoProduto[indiceProduto], " com descrição atualizada com sucesso!")
-				pularLinha()
-				indiceProduto++
-				pare				
+					
+				se(vetorDescricaoProduto[indiceProduto] == "" ou vetorDescricaoProduto[indiceProduto] == " ") {
+						
+					pularLinha()
+					escreva("[ERRO] Descrição inválida. Tente novamente. \n")
+					pularLinha()
+						
+				} senao {
+						
+					vetorDescricaoProduto[indiceProduto] = vetorDescricaoProduto[indiceProduto]
+					pularLinha()
+					escreva("Produto: ", vetorDescricaoProduto[indiceProduto], " com descrição alterada com sucesso!")
+					pularLinha()
+					indiceProduto++
+					pare	
+								
+				}
 			}
-			
-		}
 
-		para(inteiro x = 0; x < 10; x++) {
+		} senao {
 
 			pularLinha()
-			escreva("produto sem validação: " + vetorDescricaoProduto[x], "\n")	
-
+			escreva("[ERRO] Código de produto inexistente. ")
+			pularLinha()
+				
+		}
 			
-		} 
-		
-	}
+	}	
 
 	funcao vazio exibirProdutos() {
 
@@ -275,7 +286,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6749; 
+ * @POSICAO-CURSOR = 7016; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
