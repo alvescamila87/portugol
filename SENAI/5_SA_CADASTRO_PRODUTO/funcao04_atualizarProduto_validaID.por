@@ -1,6 +1,6 @@
 programa
 {
-	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], loginBD="admin", senhaBD="12345"
+	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], usuarioBD="admin", senhaBD="12345"
 	inteiro indiceProduto=0, opcao=0, vetorIdProduto[999], idProduto=0
 	logico buscaProduto=falso
 		
@@ -27,15 +27,15 @@ programa
 	// Autenticação do usuário no sistema
 	funcao vazio login() {
 		
-	cadeia login="", senha=""
+	cadeia usuario="", senha=""
 
 	// Validação de username
-	enquanto(login != loginBD) {
+	enquanto(usuario != usuarioBD) {
 		
 		escreva("Informe o login de usuário: ")
-		leia(login)
+		leia(usuario)
 
-		se (login == loginBD) {
+		se (usuario == usuarioBD) {
 			pare							
 		} senao {
 			escreva("Usuário inválido. Tente novamente.\n")
@@ -240,10 +240,8 @@ programa
 			para(inteiro contador = 0; contador < 999; contador++) {
 
 				// valida se o índice informado possui produto cadastrado nessa posição do vetor
-				se(idProduto == vetorIdProduto[contador]) {
-					
-					//buscaProduto = verdadeiro 
-					
+				se(idProduto == vetorIdProduto[idProduto]) {
+									
 					pularLinha()
 					imprimirLinha()
 					pularLinha()
@@ -253,7 +251,7 @@ programa
 					imprimirLinha()
 					pularLinha()
 
-					enquanto(verdadeiro) {
+					enquanto(buscaProduto != verdadeiro) {
 				
 						escreva("Informe a nova descrição do produto: ")
 						leia(vetorDescricaoProduto[idProduto])
@@ -270,18 +268,22 @@ programa
 								vetorDescricaoProduto[idProduto] = vetorDescricaoProduto[idProduto]
 								pularLinha()
 								escreva("ID Produto: ", vetorIdProduto[idProduto], " ")	
-								escreva("Produto: ", vetorDescricaoProduto[idProduto], " com descrição alterada com sucesso!")								
+								escreva("Produto: ", vetorDescricaoProduto[idProduto], " com descrição alterada com sucesso!")	
+								buscaProduto = verdadeiro							
 								pularLinha()
-								pare		
 									
 						}
 					}
-					
+						
 				} senao {
-
+				
 					pularLinha()
 					escreva("[ERRO] Código de produto não cadastrado. ")
 					pularLinha()
+					pare
+				}
+
+				se(buscaProduto) {
 					pare
 				}
 							
@@ -304,8 +306,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 11; 
- * @PONTOS-DE-PARADA = ;
+ * @POSICAO-CURSOR = 7632; 
+ * @PONTOS-DE-PARADA = 234;
  * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 3, 8, 21}-{vetorClassificacaoProduto, 3, 36, 25}-{indiceProduto, 4, 9, 13}-{opcao, 4, 26, 5}-{vetorIdProduto, 4, 35, 14}-{idProduto, 4, 56, 9}-{contador, 240, 16, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
