@@ -300,9 +300,51 @@ programa
 
 	}
 
-	funcao vazio removerProduto() {
-		//implementar	
-	}
+	    funcao vazio removerProduto() {
+        
+	    escreva("Informe o código do produto a ser removido: ")
+	    leia(idProduto)
+
+        // valida se é um número válido do vetor
+        se(idProduto >= 0 e idProduto < 999) {
+
+        	  // valida se o índice informado possui produto cadastrado nessa posição do vetor            
+            se(idProduto == vetorIdProduto[idProduto]) {
+                
+                pularLinha()
+                imprimirLinha()
+                pularLinha()
+                escreva("ID Produto detectado: " + vetorIdProduto[idProduto], "\n")
+                escreva("Produto detectado: " + vetorDescricaoProduto[idProduto], "\n")
+                pularLinha()
+                imprimirLinha()
+                pularLinha()
+
+                vetorIdProduto[idProduto] = 0// pesquisar como remover
+                vetorDescricaoProduto[idProduto] = ""
+                vetorClassificacaoProduto[idProduto] = ""
+                // informar vetor de estoque aqui (PENDENTE)
+                
+                pularLinha()
+                escreva ("Produto removido com sucesso!")
+                pularLinha()
+                
+                
+            } senao {
+                
+                pularLinha()
+                escreva("[ERRO] Código de produto não cadastrado. ")
+                pularLinha()
+            }
+            
+        } senao {
+        
+                pularLinha()
+                escreva("[ERRO] Código de produto inexistente. ")
+                pularLinha()
+            
+        }        
+    }
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -310,7 +352,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 7819; 
+ * @POSICAO-CURSOR = 8088; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
