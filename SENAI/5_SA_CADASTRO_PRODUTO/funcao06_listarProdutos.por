@@ -1,10 +1,11 @@
 programa
 {
+	// Variáveis globais
 	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], usuarioBD="admin", senhaBD="12345"
 	inteiro contadorProduto=0, opcao=0, vetorIdProduto[999], idProduto=0
 	logico buscaProduto=falso
 		
-	
+	// Função principal de execução do sistema
 	funcao inicio()
 	{
 		login()
@@ -24,7 +25,7 @@ programa
 		escreva("\n")
 	}
 	
-	// Autenticação do usuário no sistema
+	// Autenticação do usuário no sistema,, sem autenticação, não é possível acessar o sistema
 	funcao vazio login() {
 		
 	cadeia usuario="", senha=""
@@ -38,6 +39,7 @@ programa
 		se (usuario == usuarioBD) {
 			pare							
 		} senao {
+			pularLinha()
 			escreva("Usuário inválido. Tente novamente.\n")
 		}
 	}
@@ -51,6 +53,7 @@ programa
 		se(senha == senhaBD) {
 			pare
 		} senao {
+			pularLinha()
 			escreva("Senha inválida. Tente novamente.\n")
 		}
 			
@@ -65,7 +68,7 @@ programa
 	pularLinha()	
 	}
 
-	// Menu de opções do sistema
+	// Menu de opções do sistema que é exibido sempre que ocorre a execução de uma das funções abaixo, com exceção de sair do sistema
 	funcao vazio menu() {	
 
 	opcao=0 
@@ -150,6 +153,7 @@ programa
 
 	}
 
+	// Função para inserir um produto por vez, cadastra uma descrição e solicita a classificação do produto por linha/tipo
 	funcao vazio inserirProduto() {
 	
 
@@ -225,6 +229,7 @@ programa
 		
 	}
 
+	// Função para atualizar um produto por vez, altera apenas a descrição do produto
 	funcao vazio atualizarProduto() {
 
 				
@@ -288,6 +293,7 @@ programa
 
 	}
 
+	// Função de excluir um produto por vez, exclui o produto, a classificação e a qtd do estoque
 	funcao vazio excluirProduto() {
         
 	escreva("Informe o código do produto a ser excluído: ")
@@ -332,8 +338,9 @@ programa
                 pularLinha()
             
         }        
-    }
+	}
 
+	// Função listar todos os produtos do sistema com ID, Descrição, Classificação e Qtd Estoque
 	funcao vazio listarProdutos() {
 
 		//Cabeçalho da lista de produtos
@@ -349,7 +356,6 @@ programa
 		
 	}
 
-	
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -357,9 +363,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2432; 
+ * @POSICAO-CURSOR = 1147; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 3, 8, 21}-{vetorClassificacaoProduto, 3, 36, 25}-{contadorProduto, 4, 9, 15}-{opcao, 4, 28, 5}-{vetorIdProduto, 4, 37, 14}-{idProduto, 4, 58, 9}-{x, 342, 15, 1};
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{x, 349, 15, 1};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
