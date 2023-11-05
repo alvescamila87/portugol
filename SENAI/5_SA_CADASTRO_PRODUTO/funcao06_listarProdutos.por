@@ -154,78 +154,88 @@ programa
 	}
 
 	// Função para inserir um produto por vez, cadastra uma descrição e solicita a classificação do produto por linha/tipo
-	funcao vazio inserirProduto() {
-	
+	funcao vazio inserirProduto() {	
 
-	// Colocando produto no vetor
-	enquanto(verdadeiro) {
-		
-		escreva("Informe a descrição do produto: ")
-		leia(vetorDescricaoProduto[contadorProduto])	
+		// Colocando produto no vetor
+		enquanto(verdadeiro) {
 			
-			se(vetorDescricaoProduto[contadorProduto] == "" ou vetorDescricaoProduto[contadorProduto] == " ") {
+			escreva("Informe a descrição do produto: ")
+			leia(vetorDescricaoProduto[contadorProduto])	
 				
-				pularLinha()
-				escreva("[ERRO] Descrição inválida. Tente novamente. \n")
-				pularLinha()
-				
-			} senao {
-				
-				vetorDescricaoProduto[contadorProduto] = vetorDescricaoProduto[contadorProduto]
-				vetorIdProduto[contadorProduto] = contadorProduto
-				pularLinha()
-				escreva("Produto: ", vetorDescricaoProduto[contadorProduto], " adicionado com sucesso!")
-				pularLinha()
-				pare
-				
-			}
-	}
+				se(vetorDescricaoProduto[contadorProduto] == "" ou vetorDescricaoProduto[contadorProduto] == " ") {
+					
+					pularLinha()
+					escreva("[ERRO] Descrição inválida. Tente novamente. \n")
+					pularLinha()
+					
+				} senao {
+					
+					vetorDescricaoProduto[contadorProduto] = vetorDescricaoProduto[contadorProduto]
+					vetorIdProduto[contadorProduto] = contadorProduto
+					pularLinha()
+					escreva("Produto: ", vetorDescricaoProduto[contadorProduto], " adicionado com sucesso!")
+					pularLinha()
+					pare
+					
+				}
+		}
 
-	// classificação de produto
-	enquanto(verdadeiro) {
+		// classificação de produto
+		enquanto(verdadeiro) {
+		
+			escreva("_______________________________________________________\n")
+			escreva("|                                                     |\n")
+			escreva("|              Classificação do produto               |\n")
+			escreva("|_____________________________________________________|\n")
+			escreva("|                                                     |\n")
+			escreva("|    [A] - Primeira linha                             |\n")
+			escreva("|    [B] - Linha regular linha                        |\n")
+			escreva("|    [C] - Segunda linha                              |\n")
+			escreva("|_____________________________________________________|\n")
+			escreva("\n")
+			escreva("Informe a classificação do produto em letra maiúscula: ")
+			leia(vetorClassificacaoProduto[contadorProduto])
 	
-		escreva("_______________________________________________________\n")
-		escreva("|                                                     |\n")
-		escreva("|              Classificação do produto               |\n")
-		escreva("|_____________________________________________________|\n")
-		escreva("|                                                     |\n")
-		escreva("|    [A] - Primeira linha                             |\n")
-		escreva("|    [B] - Linha regular linha                        |\n")
-		escreva("|    [C] - Segunda linha                              |\n")
-		escreva("|_____________________________________________________|\n")
-		escreva("\n")
-		escreva("Informe a classificação do produto em letra maiúscula: ")
-		leia(vetorClassificacaoProduto[contadorProduto])
-
-
-			se(vetorClassificacaoProduto[contadorProduto] == "A") {
-					pularLinha()
-					escreva("Classificação de produto: PRIMEIRA LINHA \n")
-					vetorClassificacaoProduto[contadorProduto] = vetorClassificacaoProduto[contadorProduto]
-					contadorProduto++
-					pularLinha()
-					pare
-			} senao se (vetorClassificacaoProduto[contadorProduto] == "B") {
-					pularLinha()
-					escreva("Classificação de produto: LINHA REGULAR \n")
-					vetorClassificacaoProduto[contadorProduto] = vetorClassificacaoProduto[contadorProduto]
-					contadorProduto++
-					pularLinha()
-					pare
-			} senao se (vetorClassificacaoProduto[contadorProduto] == "C") {
-					pularLinha()
-					escreva("Classificação de produto: SEGUNDA LINHA \n")
-					vetorClassificacaoProduto[contadorProduto] = vetorClassificacaoProduto[contadorProduto]
-					contadorProduto++
-					pularLinha()
-					pare
-			} senao {
-					pularLinha()
-					escreva("[ERRO] Classificação inválida. Tente novamente! \n")
-					pularLinha()	
-			}
 	
-	}
+					se(vetorClassificacaoProduto[contadorProduto] == "A") {
+						
+		                    pularLinha()
+		                    escreva("Classificação de produto: PRIMEIRA LINHA \n")
+		                    vetorClassificacaoProduto[contadorProduto] = "Primeira Linha"
+		                    vetorIdProduto[contadorProduto] = contadorProduto
+		                    contadorProduto++
+		                    pularLinha()
+		                    pare
+		                    
+		           	 } senao se (vetorClassificacaoProduto[contadorProduto] == "B") {
+		           	 	
+		                    pularLinha()
+		                    escreva("Classificação de produto: LINHA REGULAR \n")
+		                    vetorClassificacaoProduto[contadorProduto] = "Linha Regular "
+		                    vetorIdProduto[contadorProduto] = contadorProduto
+		                    contadorProduto++
+		                    pularLinha()
+		                    pare
+		                    
+		           	 } senao se (vetorClassificacaoProduto[contadorProduto] == "C") {
+		           	 	
+		                    pularLinha()
+		                    escreva("Classificação de produto: SEGUNDA LINHA \n")
+		                    vetorClassificacaoProduto[contadorProduto] = "Segunda Linha "
+		                    vetorIdProduto[contadorProduto] = contadorProduto
+		                    contadorProduto++
+		                    pularLinha()
+		                    pare
+		                    
+		            	} senao {
+		            		
+		                    pularLinha()
+		                    escreva("[ERRO] Classificação inválida. Tente novamente! \n")
+		                    pularLinha()  
+		                      
+		           	}
+		    
+		}
 		
 	}
 
@@ -343,18 +353,20 @@ programa
 	// Função listar todos os produtos do sistema com ID, Descrição, Classificação e Qtd Estoque
 	funcao vazio listarProdutos() {
 
-		//Cabeçalho da lista de produtos
-		escreva("| ID Produto | Classificação | Descrição Produto | Qtd em Estoque | \n")
-		
-		para(inteiro x = 0; x < contadorProduto; x++) {
-		
-			se(vetorDescricaoProduto[x] != "") {
-				escreva(vetorIdProduto[x], "     ", vetorClassificacaoProduto[x], "     ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
-			}					
-		} 
-		
-		
-	}
+        //Cabeçalho da lista de produtos
+        escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+        escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+        escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+        
+        para(inteiro x = 0; x < contadorProduto; x++) {
+        
+            se(vetorDescricaoProduto[x] != "") {
+                escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
+            }                    
+        } 
+        
+        
+    }
 
 }
 
@@ -363,9 +375,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1147; 
+ * @POSICAO-CURSOR = 5645; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{x, 349, 15, 1};
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{x, 361, 21, 1};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */

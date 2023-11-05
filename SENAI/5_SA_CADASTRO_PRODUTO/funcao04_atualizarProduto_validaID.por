@@ -308,7 +308,7 @@ programa
  * 
  * @POSICAO-CURSOR = 7632; 
  * @PONTOS-DE-PARADA = 234;
- * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 3, 8, 21}-{vetorClassificacaoProduto, 3, 36, 25}-{indiceProduto, 4, 9, 13}-{opcao, 4, 26, 5}-{vetorIdProduto, 4, 35, 14}-{idProduto, 4, 56, 9}-{contador, 240, 16, 8};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
