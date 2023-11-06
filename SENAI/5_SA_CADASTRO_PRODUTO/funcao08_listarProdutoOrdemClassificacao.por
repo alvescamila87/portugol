@@ -19,7 +19,7 @@ programa
 	// Função Geral 1 - Imprimir linha
 	funcao vazio imprimirLinha() {
 		
-		escreva("_________________________________________\n")
+		escreva("═════════════════════════════════════════\n")
 		
 	}
 
@@ -89,7 +89,6 @@ programa
 
 		
 		escreva("╔═══════════════════════════════════════╗\n")
-		escreva("║                                       ║\n")
 		escreva("║              MENU DE OPÇÕES           ║\n")
 		escreva("╠═══════════════════════════════════════╣\n")
 		escreva("║                                       ║\n")
@@ -102,6 +101,7 @@ programa
 		escreva("║ [7] - Adicionar produto do estoque    ║\n")
 		escreva("║ [8] - Remover produto do estoque      ║\n")
 		escreva("║ [9] - Sair do programa                ║\n")
+		escreva("║                                       ║\n")
 		escreva("╚═══════════════════════════════════════╝\n")
 		pularLinha()      
 		escreva("Digite uma das opções: ")
@@ -191,15 +191,15 @@ programa
 		// classificação de produto
 		enquanto(verdadeiro) {
 		
-			escreva("╔═════════════════════════════════════════════════════╗\n")
-			escreva("║              CLASSIFICAÇÃO DO PRODUTO               ║\n")
-			escreva("╠═════════════════════════════════════════════════════╣\n")
-			escreva("║                                                     ║\n")
-			escreva("║    [A] - Primeira linha                             ║\n")
-			escreva("║    [B] - Linha regular                              ║\n")
-			escreva("║    [C] - Segunda linha                              ║\n")
-			escreva("║                                                     ║\n")
-			escreva("╚═════════════════════════════════════════════════════╝\n")
+		     escreva("╔═════════════════════════════════╗\n")
+               escreva("║     CLASSIFICAÇÃO DO PRODUTO    ║\n")
+               escreva("╠═════════════════════════════════╣\n")
+               escreva("║                                 ║\n")
+               escreva("║    [A] - Primeira linha         ║\n")
+               escreva("║    [B] - Linha regular          ║\n")
+               escreva("║    [C] - Segunda linha          ║\n")
+               escreva("║                                 ║\n")
+               escreva("╚═════════════════════════════════╝\n")
 			escreva("\n")
 			escreva("Informe a classificação do produto em letra maiúscula: ")
 			leia(vetorClassificacaoProduto[contadorProduto])
@@ -390,14 +390,15 @@ programa
 
 	enquanto(opcao < 1 ou opcao > 3) {
 
-	   escreva("╔═══════════════════════════════════════╗\n")
-        escreva("║          EXIBIR PRODUTO POR           ║\n")
-        escreva("╠═══════════════════════════════════════╣\n")
-        escreva("║                                       ║\n")
-        escreva("║ [1] - Ordem crescente                 ║\n")
-        escreva("║ [2] - Ordem decrescente               ║\n")
-        escreva("║ [3] - Voltar para o menu              ║\n")
-        escreva("╚═══════════════════════════════════════╝\n")
+	   escreva("╔═════════════════════════════════╗\n")
+        escreva("║       EXIBIR PRODUTO POR        ║\n")
+        escreva("╠═════════════════════════════════╣\n")
+        escreva("║                                 ║\n")
+        escreva("║ [1] - Ordem crescente           ║\n")
+        escreva("║ [2] - Ordem decrescente         ║\n")
+        escreva("║ [3] - Voltar para o menu        ║\n")
+        escreva("║                                 ║\n")
+        escreva("╚═════════════════════════════════╝\n")
         pularLinha()      
         escreva("Informe o tipo de ordenação: ")
         leia(opcao)
@@ -477,17 +478,17 @@ programa
 			
 	enquanto(opcaoClassificacao != "A" ou opcaoClassificacao != "B" ou opcaoClassificacao != "C") {
 
-	   escreva("╔═══════════════════════════════════════╗\n")
-        escreva("║   FILTAR PRODUTOS POR CLASSIFICAÇÃO   ║\n")
-        escreva("╠═══════════════════════════════════════╣\n")
-        escreva("║                                       ║\n")
-	   escreva("║    [A] - Somente Primeira linha       ║\n")
-	   escreva("║    [B] - Somente Linha regular        ║\n")
-	   escreva("║    [C] - Somente Segunda linha        ║\n")
-	   escreva("║    [D] - Todas em ordem crescente     ║\n")
-	   escreva("║    [E] - Voltar para o menu           ║\n")
-	   escreva("║                                       ║\n")
-        escreva("╚═══════════════════════════════════════╝\n")
+	   escreva("╔═════════════════════════════════════════════════════════╗\n")
+        escreva("║                FILTAR PRODUTOS POR CLASSIFICAÇÃO        ║\n")
+        escreva("╠═════════════════════════════════════════════════════════╣\n")
+        escreva("║                                                         ║\n")
+        escreva("║    [A] - Somente produtos de primeira linha             ║\n")
+        escreva("║    [B] - Somente produtos de linha regular              ║\n")
+        escreva("║    [C] - Somente produtos de segunda linha              ║\n")
+        escreva("║    [D] - Todas as classificações em ordem crescente     ║\n")
+        escreva("║    [E] - Voltar para o menu                             ║\n")
+        escreva("║                                                         ║\n")
+        escreva("╚═════════════════════════════════════════════════════════╝\n")
         pularLinha()      
         escreva("Informe a classificação do produto a ser filtrado: ")
         leia(opcaoClassificacao)
@@ -637,7 +638,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 18038; 
+ * @POSICAO-CURSOR = 11814; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{opcaoClassificacao, 4, 104, 18}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

@@ -1,7 +1,7 @@
 programa
 {
 	// Variáveis globais
-	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], usuarioBD="admin", senhaBD="12345"
+	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], usuarioBD="admin", senhaBD="12345", opcaoClassificacao=""
 	inteiro contadorProduto=0, opcao=0, vetorIdProduto[999], idProduto=0, auxiliarOrdenacao=0
 	logico buscaProduto=falso
 
@@ -9,7 +9,7 @@ programa
 	funcao inicio()
 	{
 		login()
-		enquanto(verdadeiro) {
+		enquanto(opcao != 9) {
 			
 			menu() 
 			
@@ -19,7 +19,7 @@ programa
 	// Função Geral 1 - Imprimir linha
 	funcao vazio imprimirLinha() {
 		
-		escreva("_________________________________________\n")
+		escreva("═════════════════════════════════════════\n")
 		
 	}
 
@@ -89,7 +89,6 @@ programa
 
 		
 		escreva("╔═══════════════════════════════════════╗\n")
-		escreva("║                                       ║\n")
 		escreva("║              MENU DE OPÇÕES           ║\n")
 		escreva("╠═══════════════════════════════════════╣\n")
 		escreva("║                                       ║\n")
@@ -102,6 +101,7 @@ programa
 		escreva("║ [7] - Adicionar produto do estoque    ║\n")
 		escreva("║ [8] - Remover produto do estoque      ║\n")
 		escreva("║ [9] - Sair do programa                ║\n")
+		escreva("║                                       ║\n")
 		escreva("╚═══════════════════════════════════════╝\n")
 		pularLinha()      
 		escreva("Digite uma das opções: ")
@@ -131,8 +131,7 @@ programa
 				pare
 				caso 6: 
 					pularLinha()
-					escreva("Chama a função 6 \n")
-					pularLinha()
+					listarProdutoOrdenacaoClassificacao()
 				pare
 				caso 7: 
 					pularLinha()
@@ -192,15 +191,15 @@ programa
 		// classificação de produto
 		enquanto(verdadeiro) {
 		
-			escreva("╔═════════════════════════════════════════════════════╗\n")
-			escreva("║                                                     ║\n")
-			escreva("║              Classificação do produto               ║\n")
-			escreva("╠═════════════════════════════════════════════════════╣\n")
-			escreva("║                                                     ║\n")
-			escreva("║    [A] - Primeira linha                             ║\n")
-			escreva("║    [B] - Linha regular linha                        ║\n")
-			escreva("║    [C] - Segunda linha                              ║\n")
-			escreva("╚═════════════════════════════════════════════════════╝\n")
+		     escreva("╔═════════════════════════════════╗\n")
+               escreva("║     CLASSIFICAÇÃO DO PRODUTO    ║\n")
+               escreva("╠═════════════════════════════════╣\n")
+               escreva("║                                 ║\n")
+               escreva("║    [A] - Primeira linha         ║\n")
+               escreva("║    [B] - Linha regular          ║\n")
+               escreva("║    [C] - Segunda linha          ║\n")
+               escreva("║                                 ║\n")
+               escreva("╚═════════════════════════════════╝\n")
 			escreva("\n")
 			escreva("Informe a classificação do produto em letra maiúscula: ")
 			leia(vetorClassificacaoProduto[contadorProduto])
@@ -210,7 +209,7 @@ programa
 					
 	                    pularLinha()
 	                    escreva("Classificação de produto: PRIMEIRA LINHA \n")
-	                    vetorClassificacaoProduto[contadorProduto] = "Primeira Linha"
+	                    vetorClassificacaoProduto[contadorProduto] = "Primeira linha"
 	                    vetorIdProduto[contadorProduto] = contadorProduto
 	                    contadorProduto++
 	                    pularLinha()
@@ -220,7 +219,7 @@ programa
 	           	 	
 	                    pularLinha()
 	                    escreva("Classificação de produto: LINHA REGULAR \n")
-	                    vetorClassificacaoProduto[contadorProduto] = "Linha Regular "
+	                    vetorClassificacaoProduto[contadorProduto] = "Linha regular"
 	                    vetorIdProduto[contadorProduto] = contadorProduto
 	                    contadorProduto++
 	                    pularLinha()
@@ -230,7 +229,7 @@ programa
 	           	 	
 	                    pularLinha()
 	                    escreva("Classificação de produto: SEGUNDA LINHA \n")
-	                    vetorClassificacaoProduto[contadorProduto] = "Segunda Linha "
+	                    vetorClassificacaoProduto[contadorProduto] = "Segunda linha"
 	                    vetorIdProduto[contadorProduto] = contadorProduto
 	                    contadorProduto++
 	                    pularLinha()
@@ -300,7 +299,7 @@ programa
 					pularLinha()
 					escreva("[ERRO] Código de produto não cadastrado. ")
 					pularLinha()
-					//pare
+
 				}
 			
 		} senao {
@@ -391,14 +390,15 @@ programa
 
 	enquanto(opcao < 1 ou opcao > 3) {
 
-	   escreva("╔═══════════════════════════════════════╗\n")
-        escreva("║          EXIBIR PRODUTO POR           ║\n")
-        escreva("╠═══════════════════════════════════════╣\n")
-        escreva("║                                       ║\n")
-        escreva("║ [1] - Ordem crescente                 ║\n")
-        escreva("║ [2] - Ordem decrescente               ║\n")
-        escreva("║ [3] - Voltar para o menu              ║\n")
-        escreva("╚═══════════════════════════════════════╝\n")
+	   escreva("╔═════════════════════════════════╗\n")
+        escreva("║       EXIBIR PRODUTO POR        ║\n")
+        escreva("╠═════════════════════════════════╣\n")
+        escreva("║                                 ║\n")
+        escreva("║ [1] - Ordem crescente           ║\n")
+        escreva("║ [2] - Ordem decrescente         ║\n")
+        escreva("║ [3] - Voltar para o menu        ║\n")
+        escreva("║                                 ║\n")
+        escreva("╚═════════════════════════════════╝\n")
         pularLinha()      
         escreva("Informe o tipo de ordenação: ")
         leia(opcao)
@@ -471,6 +471,163 @@ programa
 	}
 	
 	}
+
+	// Função que filtra os produtos do sistema por tipo de classificação ou exibe todos os produtos ordenados por classificação
+	funcao vazio listarProdutoOrdenacaoClassificacao() {
+
+			
+	enquanto(opcaoClassificacao != "A" ou opcaoClassificacao != "B" ou opcaoClassificacao != "C") {
+
+	   escreva("╔═════════════════════════════════════════════════════════╗\n")
+        escreva("║                FILTAR PRODUTOS POR CLASSIFICAÇÃO        ║\n")
+        escreva("╠═════════════════════════════════════════════════════════╣\n")
+        escreva("║                                                         ║\n")
+        escreva("║    [A] - Somente produtos de primeira linha             ║\n")
+        escreva("║    [B] - Somente produtos de linha regular              ║\n")
+        escreva("║    [C] - Somente produtos de segunda linha              ║\n")
+        escreva("║    [D] - Todas as classificações em ordem crescente     ║\n")
+        escreva("║    [E] - Voltar para o menu                             ║\n")
+        escreva("║                                                         ║\n")
+        escreva("╚═════════════════════════════════════════════════════════╝\n")
+        pularLinha()      
+        escreva("Informe a classificação do produto a ser filtrado: ")
+        leia(opcaoClassificacao)
+
+		// Imprime SOMENTE os produtos de classificação A - Primeiro linha
+		se(opcaoClassificacao == "A") {
+				
+			pularLinha()
+			escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+			escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+			escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+			pularLinha()	
+
+			para(inteiro x = 0; x < contadorProduto; x++) {
+				
+			
+				se(vetorClassificacaoProduto[x] == "Primeira linha" e vetorDescricaoProduto[x] != "") {
+	             
+					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+			
+				}
+				
+			}
+			
+			buscaProduto=verdadeiro
+			pularLinha()
+			pularLinha()
+
+		// Imprime SOMENTE os produtos de classificação B - Linha regular
+		} senao se (opcaoClassificacao == "B")	{
+			
+			pularLinha()
+			escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+			escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+			escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+			pularLinha()	
+			
+			para(inteiro x = 0; x < contadorProduto; x++) {
+				
+			
+				se(vetorClassificacaoProduto[x] == "Linha regular" e vetorDescricaoProduto[x] != "") {
+	             
+					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+			
+				}
+				
+			}
+			
+			buscaProduto=verdadeiro
+			pularLinha()
+			pularLinha()
+
+		// Imprime SOMENTE os produtos de classificação C - Segunda linha
+		} senao se (opcaoClassificacao == "C")	{
+			
+			pularLinha()
+			escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+			escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+			escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+			pularLinha()	
+			
+			para(inteiro x = 0; x < contadorProduto; x++) {			
+			
+				se(vetorClassificacaoProduto[x] == "Segunda linha" e vetorDescricaoProduto[x] != "") {
+	             
+					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+			
+				}
+				
+			}
+			
+			buscaProduto=verdadeiro
+			pularLinha()
+			pularLinha()
+		
+		// Imprime TODOS os produtos ordenados por classificação, sendo exibidos por primeiro os de classificação A, depois B e por último C
+		} senao se (opcaoClassificacao == "D")	{
+			
+			pularLinha()
+			escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+			escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+			escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+			pularLinha()	
+
+			para(inteiro x = 0; x < contadorProduto; x++) {			
+				
+					se(vetorClassificacaoProduto[x] == "Primeira linha" e vetorDescricaoProduto[x] != "") {
+		             
+						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+				
+					}
+					
+			}
+
+			para(inteiro x = 0; x < contadorProduto; x++) {			
+				
+					se(vetorClassificacaoProduto[x] == "Linha regular" e vetorDescricaoProduto[x] != "") {
+		             
+						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+				
+					}
+					
+			}
+
+			para(inteiro x = 0; x < contadorProduto; x++) {			
+				
+					se(vetorClassificacaoProduto[x] == "Segunda regular" e vetorDescricaoProduto[x] != "") {
+		             
+						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+				
+					}
+					
+			}			
+			
+			buscaProduto=verdadeiro
+			pularLinha()
+			pularLinha()
+
+		} senao se (opcaoClassificacao == "E")	{
+		
+			pularLinha()
+			escreva("Retornando ao menu principal. \n")
+			pularLinha()
+			pare
+		
+		} senao {
+			
+			pularLinha()
+			escreva("[ERRO] Opção inválida. Tente novamente! \n")
+			pularLinha()
+			
+		}
+
+		se (buscaProduto) {
+			pare
+		}
+
+	}
+	}
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -478,9 +635,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 11282; 
+ * @POSICAO-CURSOR = 3325; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17}-{x, 416, 18, 1}-{x, 430, 18, 1}-{y, 432, 19, 1}-{x, 450, 18, 1};
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
