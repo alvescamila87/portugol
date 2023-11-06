@@ -10,18 +10,24 @@ programa
 	{
 		login()
 		enquanto(verdadeiro) {
+			
 			menu() 
+			
 		}
 	}
 
 	// Função Geral 1 - Imprimir linha
 	funcao vazio imprimirLinha() {
+		
 		escreva("_________________________________________\n")
+		
 	}
 
 	// Função Geral 2 - Pular linha
 	funcao vazio pularLinha() {
+		
 		escreva("\n")
+		
 	}
 	
 	// Autenticação do usuário no sistema
@@ -378,24 +384,23 @@ programa
         
     }	
 
-	// Função listar todos os produtos do sistema com ID, Descrição, Classificação e Qtd Estoque
+	// Função listar todos os produtos, permitindo ordenação crescente ou decrescente pelo índice do produto
 	funcao vazio listarProdutoOrdenacao() {
 
 	opcao = 0
 
 	enquanto(opcao < 1 ou opcao > 3) {
 
-	   escreva("_________________________________________\n")
-        escreva("|                                       |\n")
-        escreva("|           EXIBIR PRODUTO POR          |\n")
-        escreva("|_______________________________________|\n")
-        escreva("|                                       |\n")
-        escreva("| [1] - Ordem crescente                 |\n")
-        escreva("| [2] - Ordem decrescente               |\n")
-        escreva("| [3] - Voltar para o menu              |\n")
-        escreva("|_______________________________________|\n")
+	   escreva("╔═══════════════════════════════════════╗\n")
+        escreva("║          EXIBIR PRODUTO POR           ║\n")
+        escreva("╠═══════════════════════════════════════╣\n")
+        escreva("║                                       ║\n")
+        escreva("║ [1] - Ordem crescente                 ║\n")
+        escreva("║ [2] - Ordem decrescente               ║\n")
+        escreva("║ [3] - Voltar para o menu              ║\n")
+        escreva("╚═══════════════════════════════════════╝\n")
         pularLinha()      
-        escreva("Informa o tipo de ordenação: ")
+        escreva("Informe o tipo de ordenação: ")
         leia(opcao)
 
 			
@@ -415,7 +420,9 @@ programa
 				                escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
 				                
             				} 					
-					} 					
+					} 
+					pularLinha()
+					pularLinha()						
 				pare
 				caso 2: // Ordem decrescente de índice de produto					
 
@@ -448,11 +455,13 @@ programa
                 
            				} 
 														
-					}						
+					}
+					pularLinha()
+					pularLinha()						
 				pare
 				caso 3: 
 					pularLinha()
-					escreva("Retornando ao menu principal! \n")
+					escreva("Retornando ao menu principal. \n")
 				pare
 				caso contrario: 
 					pularLinha()
@@ -469,9 +478,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12095; 
+ * @POSICAO-CURSOR = 11282; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17}-{x, 411, 18, 1}-{x, 423, 18, 1}-{y, 425, 19, 1}-{x, 443, 18, 1};
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17}-{x, 416, 18, 1}-{x, 430, 18, 1}-{y, 432, 19, 1}-{x, 450, 18, 1};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
