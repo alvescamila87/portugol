@@ -636,38 +636,54 @@ programa
 
         // valida se é um número válido do vetor
         se(idProduto >= 0 e idProduto < 999) {
+
+		  // valida se o índice informado possui produto cadastrado nessa posição do vetor
+            se(vetorIdProduto[idProduto] == idProduto) {
             
-            pularLinha()
-            imprimirLinha()
-            pularLinha()
-            escreva("ID Produto detectado: " + vetorIdProduto[idProduto], "\n")
-            escreva("Produto detectado: " + vetorDescricaoProduto[idProduto], "\n")
-            pularLinha()
-            imprimirLinha()
-            pularLinha()
+				pularLinha()
+				escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+				escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+				escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+				escreva("       ", vetorIdProduto[idProduto], "       ", vetorClassificacaoProduto[idProduto], "                 ", vetorEstoqueProduto[idProduto], "            ", vetorDescricaoProduto[idProduto], "\n") 
+				pularLinha()
 
             enquanto (buscaProduto != verdadeiro) {
 
-                escreva("Informe a quantidade de itens que deseja adicionar: ")
+                escreva("Informe a quantidade de itens que deseja adicionar ao estoque: ")
                 leia(quantidadeItemProduto)
 
 
                 se (quantidadeItemProduto < 0 ) {
 
-                    escreva("[ERRO] Quantidade inválida, não são permitidos números negativos. Tente Novamente.")
+				pularLinha()
+                    escreva("[ERRO] Quantidade inválida, não são permitidos números negativos. Tente novamente!")
+                    pularLinha()
                     
                 } senao {
-                    
-                    vetorEstoqueProduto[idProduto] = quantidadeItemProduto
-                    escreva("")
+
+                    pularLinha()
+                    vetorIdProduto[idProduto] = idProduto
+                    vetorEstoqueProduto[idProduto] = vetorEstoqueProduto[idProduto] + quantidadeItemProduto
+                    buscaProduto=verdadeiro
+                    escreva("Estoque de: ", vetorDescricaoProduto[idProduto], " adicionado com sucesso!")
+                	pularLinha()
+                
+                    pare
                 }
             }
 
+            } senao {
+                
+            pularLinha()
+            escreva("[ERRO] Código de produto não cadastrado. ")
+            pularLinha()
+                
+            }
             
         } senao {
             
             pularLinha()
-            escreva("[ERRO] Código de produto não cadastrado. ")
+            escreva("[ERRO] Código de produto inexistente. ")
             pularLinha()
         }
         
@@ -680,9 +696,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 192; 
- * @PONTOS-DE-PARADA = 634;
- * @SIMBOLOS-INSPECIONADOS = {vetorIdProduto, 5, 37, 14}-{vetorEstoqueProduto, 5, 117, 19}-{vetorClassificacaoProduto, 4, 36, 25}-{vetorDescricaoProduto, 4, 8, 21}-{quantidadeItemProduto, 5, 92, 21}-{auxiliarOrdenacao, 5, 71, 17}-{contadorProduto, 5, 9, 15}-{idProduto, 5, 58, 9}-{opcao, 5, 28, 5};
+ * @POSICAO-CURSOR = 21653; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17}-{quantidadeItemProduto, 5, 92, 21}-{vetorEstoqueProduto, 5, 117, 19};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
