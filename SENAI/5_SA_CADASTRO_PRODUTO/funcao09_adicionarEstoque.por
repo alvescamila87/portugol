@@ -135,8 +135,7 @@ programa
 				pare
 				caso 7: 
 					pularLinha()
-					escreva("Chama a função 7 \n")
-					pularLinha()
+					adicionarEstoque()
 				pare
 				caso 8: 
 					pularLinha()
@@ -681,9 +680,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 273; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @POSICAO-CURSOR = 192; 
+ * @PONTOS-DE-PARADA = 634;
+ * @SIMBOLOS-INSPECIONADOS = {vetorIdProduto, 5, 37, 14}-{vetorEstoqueProduto, 5, 117, 19}-{vetorClassificacaoProduto, 4, 36, 25}-{vetorDescricaoProduto, 4, 8, 21}-{quantidadeItemProduto, 5, 92, 21}-{auxiliarOrdenacao, 5, 71, 17}-{contadorProduto, 5, 9, 15}-{idProduto, 5, 58, 9}-{opcao, 5, 28, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */

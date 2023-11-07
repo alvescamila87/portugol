@@ -255,7 +255,7 @@ programa
 		leia(idProduto)
 
 		// valida se é um número válido do vetor
-		se(idProduto >= 0 e idProduto < 1000) {
+		se(idProduto >= 0 e idProduto < 999) {
 
 				// valida se o índice informado possui produto cadastrado nessa posição do vetor
 				se(idProduto == vetorIdProduto[idProduto]) {
@@ -322,7 +322,7 @@ programa
 	leia(idProduto)
 
         // valida se é um número válido do vetor
-        se(idProduto >= 0 e idProduto < 1000) {
+        se(idProduto >= 0 e idProduto < 999) {
 
         	  // valida se o índice informado possui produto cadastrado nessa posição do vetor            
             se(idProduto == vetorIdProduto[idProduto]) {
@@ -338,7 +338,8 @@ programa
                 vetorIdProduto[idProduto] =  vetorIdProduto[idProduto] - idProduto 
                 vetorDescricaoProduto[idProduto] = ""
                 vetorClassificacaoProduto[idProduto] = ""
-                // informar vetor de estoque aqui (PENDENTE)
+                quantidadeItemProduto = vetorEstoqueProduto[idProduto]
+                vetorEstoqueProduto[idProduto] = vetorEstoqueProduto[idProduto] - quantidadeItemProduto
 								
 			pularLinha()			
 			escreva("Produto com excluído com sucesso !")
@@ -428,32 +429,17 @@ programa
 				pare
 				caso 2: // Ordem decrescente de índice de produto					
 
-					// Ordenar
-					para(inteiro x = 0; x < contadorProduto; x++) {
-
-						para(inteiro y = x + 1; y < contadorProduto; y++) {
-
-							se(vetorIdProduto[x] < vetorIdProduto[y]) {
-
-								auxiliarOrdenacao = vetorIdProduto[x]
-								vetorIdProduto[x] = vetorIdProduto[y]
-								vetorIdProduto[y] = auxiliarOrdenacao
-							}
-						}
-
-					}
-
 					// Imprimir cabeçalho da lista de produtos				
 					pularLinha()
 					escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
 					escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
 					escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
 					
-					para(inteiro x = 0; x < contadorProduto; x++) {
+					para(inteiro x = contadorProduto; x >= 0; x--)  {
 					
 						se(vetorDescricaoProduto[x] != "") {
                 
-                				escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
+                				escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") 
                 
            				} 
 														
@@ -464,6 +450,7 @@ programa
 				caso 3: 
 					pularLinha()
 					escreva("Retornando ao menu principal. \n")
+					pularLinha()
 				pare
 				caso contrario: 
 					pularLinha()
@@ -509,7 +496,7 @@ programa
 			
 				se(vetorClassificacaoProduto[x] == "Primeira linha" e vetorDescricaoProduto[x] != "") {
 	             
-					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") 
 			
 				}
 				
@@ -533,7 +520,7 @@ programa
 			
 				se(vetorClassificacaoProduto[x] == "Linha regular" e vetorDescricaoProduto[x] != "") {
 	             
-					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") 
 			
 				}
 				
@@ -556,7 +543,7 @@ programa
 			
 				se(vetorClassificacaoProduto[x] == "Segunda linha" e vetorDescricaoProduto[x] != "") {
 	             
-					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+					escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") 
 			
 				}
 				
@@ -579,7 +566,7 @@ programa
 				
 					se(vetorClassificacaoProduto[x] == "Primeira linha" e vetorDescricaoProduto[x] != "") {
 		             
-						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") 
 				
 					}
 					
@@ -589,7 +576,7 @@ programa
 				
 					se(vetorClassificacaoProduto[x] == "Linha regular" e vetorDescricaoProduto[x] != "") {
 		             
-						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") 
 				
 					}
 					
@@ -597,9 +584,9 @@ programa
 
 			para(inteiro x = 0; x < contadorProduto; x++) {			
 				
-					se(vetorClassificacaoProduto[x] == "Segunda regular" e vetorDescricaoProduto[x] != "") {
+					se(vetorClassificacaoProduto[x] == "Segunda linha" e vetorDescricaoProduto[x] != "") {
 		             
-						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") 
+						escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") 
 				
 					}
 					
@@ -683,7 +670,7 @@ programa
     	escreva("Informe o código do produto que deseja ter o estoque removido: ")
     	leia(idProduto)
 
-    		se(idProduto >= 0 e idProduto > 1000) {
+    		se(idProduto >= 0 e idProduto > 999) {
 
 			se(vetorIdProduto[idProduto] == idProduto) {
 
@@ -755,9 +742,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 24005; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @POSICAO-CURSOR = 22382; 
+ * @PONTOS-DE-PARADA = 492;
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17}-{quantidadeItemProduto, 5, 92, 21}-{vetorEstoqueProduto, 5, 117, 19}-{x, 419, 18, 1}-{x, 438, 18, 1};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
