@@ -130,18 +130,16 @@ programa
 					listarProdutoOrdenacao()
 				pare
 				caso 6: 
-					pularLinha()
+					pularLinha()						 
 					listarProdutoOrdenacaoClassificacao()
 				pare
 				caso 7: 
 					pularLinha()
-					escreva("Chama a função 7 \n")
-					pularLinha()
+					adicionarEstoque()
 				pare
 				caso 8: 
 					pularLinha()
-					escreva("Chama a função 8 \n")
-					pularLinha()
+					removerEstoque()
 				pare
 				caso 9:
 					pularLinha()
@@ -149,6 +147,7 @@ programa
 					pularLinha()
 					escreva("PROGRAMA FINALIZADO! \n")
 					escreva("Obrigado! Volte sempre! \n")
+					imprimirLinha()
 					imprimirLinha()
 					pularLinha()
 				pare
@@ -191,18 +190,18 @@ programa
 		// classificação de produto
 		enquanto(verdadeiro) {
 		
-		     escreva("╔═════════════════════════════════╗\n")
-               escreva("║     CLASSIFICAÇÃO DO PRODUTO    ║\n")
-               escreva("╠═════════════════════════════════╣\n")
-               escreva("║                                 ║\n")
-               escreva("║    [A] - Primeira linha         ║\n")
-               escreva("║    [B] - Linha regular          ║\n")
-               escreva("║    [C] - Segunda linha          ║\n")
-               escreva("║                                 ║\n")
-               escreva("╚═════════════════════════════════╝\n")
-			escreva("\n")
-			escreva("Informe a classificação do produto em letra maiúscula: ")
-			leia(vetorClassificacaoProduto[contadorProduto])
+		  escreva("╔═════════════════════════════════╗\n")
+            escreva("║     CLASSIFICAÇÃO DO PRODUTO    ║\n")
+            escreva("╠═════════════════════════════════╣\n")
+            escreva("║                                 ║\n")
+            escreva("║    [A] - Primeira linha         ║\n")
+            escreva("║    [B] - Linha regular          ║\n")
+            escreva("║    [C] - Segunda linha          ║\n")
+            escreva("║                                 ║\n")
+            escreva("╚═════════════════════════════════╝\n")
+		  escreva("\n")
+		  escreva("Informe a classificação do produto em letra maiúscula: ")
+		  leia(vetorClassificacaoProduto[contadorProduto])
 	
 	
 				se(vetorClassificacaoProduto[contadorProduto] == "A") {
@@ -341,6 +340,7 @@ programa
                 pularLinha()
                 escreva ("Produto excluído com sucesso!")
                 pularLinha()
+				pularLinha()
                 
                 
             } senao {
@@ -479,7 +479,7 @@ programa
 	enquanto(opcaoClassificacao != "A" ou opcaoClassificacao != "B" ou opcaoClassificacao != "C") {
 
 	   escreva("╔═════════════════════════════════════════════════════════╗\n")
-        escreva("║                FILTAR PRODUTOS POR CLASSIFICAÇÃO        ║\n")
+        escreva("║              FILTAR PRODUTOS POR CLASSIFICAÇÃO          ║\n")
         escreva("╠═════════════════════════════════════════════════════════╣\n")
         escreva("║                                                         ║\n")
         escreva("║    [A] - Somente produtos de primeira linha             ║\n")
@@ -635,7 +635,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3325; 
+ * @POSICAO-CURSOR = 14454; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

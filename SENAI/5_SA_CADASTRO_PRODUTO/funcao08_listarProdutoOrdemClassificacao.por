@@ -191,15 +191,15 @@ programa
 		// classificação de produto
 		enquanto(verdadeiro) {
 		
-		     escreva("╔═════════════════════════════════╗\n")
-               escreva("║     CLASSIFICAÇÃO DO PRODUTO    ║\n")
-               escreva("╠═════════════════════════════════╣\n")
-               escreva("║                                 ║\n")
-               escreva("║    [A] - Primeira linha         ║\n")
-               escreva("║    [B] - Linha regular          ║\n")
-               escreva("║    [C] - Segunda linha          ║\n")
-               escreva("║                                 ║\n")
-               escreva("╚═════════════════════════════════╝\n")
+		    escreva("╔═════════════════════════════════╗\n")
+            escreva("║     CLASSIFICAÇÃO DO PRODUTO    ║\n")
+            escreva("╠═════════════════════════════════╣\n")
+            escreva("║                                 ║\n")
+            escreva("║    [A] - Primeira linha         ║\n")
+            escreva("║    [B] - Linha regular          ║\n")
+            escreva("║    [C] - Segunda linha          ║\n")
+            escreva("║                                 ║\n")
+            escreva("╚═════════════════════════════════╝\n")
 			escreva("\n")
 			escreva("Informe a classificação do produto em letra maiúscula: ")
 			leia(vetorClassificacaoProduto[contadorProduto])
@@ -390,7 +390,7 @@ programa
 
 	enquanto(opcao < 1 ou opcao > 3) {
 
-	   escreva("╔═════════════════════════════════╗\n")
+	    escreva("╔═════════════════════════════════╗\n")
         escreva("║       EXIBIR PRODUTO POR        ║\n")
         escreva("╠═════════════════════════════════╣\n")
         escreva("║                                 ║\n")
@@ -478,7 +478,7 @@ programa
 			
 	enquanto(opcaoClassificacao != "A" ou opcaoClassificacao != "B" ou opcaoClassificacao != "C") {
 
-	   escreva("╔═════════════════════════════════════════════════════════╗\n")
+	    escreva("╔═════════════════════════════════════════════════════════╗\n")
         escreva("║                FILTAR PRODUTOS POR CLASSIFICAÇÃO        ║\n")
         escreva("╠═════════════════════════════════════════════════════════╣\n")
         escreva("║                                                         ║\n")
