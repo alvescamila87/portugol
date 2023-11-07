@@ -3,7 +3,7 @@ programa
 	// Variáveis globais
 	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], usuarioBD="admin", senhaBD="12345", opcaoClassificacao=""
 	inteiro contadorProduto=0, opcao=0, vetorIdProduto[999], idProduto=0, auxiliarOrdenacao=0, quantidadeItemProduto=0, vetorEstoqueProduto[999]
-	logico buscaProduto=falso
+	logico buscaProduto=falso, temProdutoCadastrado=falso
 
 	// Função principal de execução do sistema
 	funcao inicio()
@@ -114,32 +114,80 @@ programa
 					inserirProduto()
 				pare
 				caso 2: 
-					pularLinha()
-					atualizarProduto()
+					se(temProdutoCadastrado) {
+						pularLinha()
+						atualizarProduto()
+					} senao {
+						pularLinha()
+						escreva("Não há produto cadastrado. \n")
+						pularLinha()
+						pare
+					}
 				pare
 				caso 3: 
-					pularLinha()
-					excluirProduto()
+					se(temProdutoCadastrado) {
+						pularLinha()
+						excluirProduto()
+					} senao {
+						pularLinha()
+						escreva("Não há produto cadastrado. \n")
+						pularLinha()
+						pare
+					}
 				pare
-				caso 4: 
-					pularLinha()
-					listarProdutos()
+				caso 4: 				
+					se(temProdutoCadastrado) {
+						pularLinha()
+						listarProdutos()
+					} senao {
+						pularLinha()
+						escreva("Não há produto cadastrado. \n")
+						pare
+					}					
 				pare
 				caso 5: 
-					pularLinha()
-					listarProdutoOrdenacao()
+					se(temProdutoCadastrado) {
+						pularLinha()
+						listarProdutoOrdenacao()
+					} senao {
+						pularLinha()
+						escreva("Não há produto cadastrado. \n")
+						pularLinha()
+						pare
+					}
 				pare
 				caso 6: 
-					pularLinha()						 
-					listarProdutoOrdenacaoClassificacao()
+					se(temProdutoCadastrado) {
+						pularLinha()
+						listarProdutoOrdenacaoClassificacao()
+					} senao {
+						pularLinha()
+						escreva("Não há produto cadastrado. \n")
+						pularLinha()
+						pare
+					}
 				pare
 				caso 7: 
-					pularLinha()
-					adicionarEstoque()
+					se(temProdutoCadastrado) {
+						pularLinha()
+						adicionarEstoque()
+					} senao {
+						pularLinha()
+						escreva("Não há produto cadastrado. \n")
+						pularLinha()
+						pare
+					}
 				pare
 				caso 8: 
-					pularLinha()
-					removerEstoque()
+					se(temProdutoCadastrado) {
+						pularLinha()
+						removerEstoque()
+					} senao {
+						pularLinha()
+						escreva("Não há produto cadastrado. \n")
+						pularLinha()
+						pare
+					}
 				pare
 				caso 9:
 					pularLinha()
@@ -210,6 +258,7 @@ programa
 	                    escreva("Classificação de produto: PRIMEIRA LINHA \n")
 	                    vetorClassificacaoProduto[contadorProduto] = "Primeira linha"
 	                    vetorIdProduto[contadorProduto] = contadorProduto
+	                    temProdutoCadastrado=verdadeiro
 	                    contadorProduto++
 	                    pularLinha()
 	                    pare
@@ -220,6 +269,7 @@ programa
 	                    escreva("Classificação de produto: LINHA REGULAR \n")
 	                    vetorClassificacaoProduto[contadorProduto] = "Linha regular"
 	                    vetorIdProduto[contadorProduto] = contadorProduto
+	                    temProdutoCadastrado=verdadeiro
 	                    contadorProduto++
 	                    pularLinha()
 	                    pare
@@ -230,6 +280,7 @@ programa
 	                    escreva("Classificação de produto: SEGUNDA LINHA \n")
 	                    vetorClassificacaoProduto[contadorProduto] = "Segunda linha"
 	                    vetorIdProduto[contadorProduto] = contadorProduto
+	                    temProdutoCadastrado=verdadeiro
 	                    contadorProduto++
 	                    pularLinha()
 	                    pare
@@ -374,7 +425,7 @@ programa
         
             se(vetorDescricaoProduto[x] != "") {
                 
-                escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
+                escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
                 
             }  
                               
@@ -420,7 +471,7 @@ programa
 					
 						se(vetorDescricaoProduto[x] != "") {
                 
-				                escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", "1", "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
+				                escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
 				                
             				} 					
 					} 
@@ -742,9 +793,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 22382; 
- * @PONTOS-DE-PARADA = 492;
- * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17}-{quantidadeItemProduto, 5, 92, 21}-{vetorEstoqueProduto, 5, 117, 19}-{x, 419, 18, 1}-{x, 438, 18, 1};
+ * @POSICAO-CURSOR = 13141; 
+ * @PONTOS-DE-PARADA = 183;
+ * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17}-{quantidadeItemProduto, 5, 92, 21}-{vetorEstoqueProduto, 5, 117, 19}-{buscaProduto, 6, 8, 12}-{temProdutoCadastrado, 6, 28, 20};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
