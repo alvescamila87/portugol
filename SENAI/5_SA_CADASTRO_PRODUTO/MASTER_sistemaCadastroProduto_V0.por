@@ -3,7 +3,7 @@ programa
 	// Variáveis globais
 	cadeia vetorDescricaoProduto[999], vetorClassificacaoProduto[999], usuarioBD="admin", senhaBD="12345", opcaoClassificacao=""
 	inteiro contadorProduto=0, opcao=0, vetorIdProduto[999], idProduto=0, auxiliarOrdenacao=0, quantidadeItemProduto=0, vetorEstoqueProduto[999]
-	logico buscaProduto=falso, temProdutoCadastrado=falso, exibirProdutos=falso
+	logico buscaProduto=falso, temProdutoCadastrado=falso
 
 	// Função principal de execução do sistema
 	funcao inicio()
@@ -426,9 +426,6 @@ programa
 	// Função listar todos os produtos do sistema com ID, Descrição, Classificação e Qtd Estoque
 	funcao vazio listarProdutos() {
 
-	exibirProdutos=falso
-
-
         //Cabeçalho da lista de produtos
         escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
         escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
@@ -443,18 +440,14 @@ programa
             }  
                               
         }
-        exibirProdutos=verdadeiro
-        
         pularLinha() 
         pularLinha()
-        
-        
+                
     }	
 
 	// Função listar todos os produtos, permitindo ordenação crescente ou decrescente pelo índice do produto
 	funcao vazio listarProdutoOrdenacao() {
 
-	exibirProdutos=falso
 	opcao = 0
 
 	enquanto(opcao < 1 ou opcao > 3) {
@@ -490,8 +483,6 @@ programa
 				                
             				} 					
 					}
-					
-					exibirProdutos=verdadeiro 
 					pularLinha()
 					pularLinha()						
 				pare
@@ -512,8 +503,6 @@ programa
            				} 
 														
 					}
-					
-					exibirProdutos=verdadeiro
 					pularLinha()
 					pularLinha()						
 				pare
@@ -535,7 +524,6 @@ programa
 	// Função que filtra os produtos do sistema por tipo de classificação ou exibe todos os produtos ordenados por classificação
 	funcao vazio listarProdutoOrdenacaoClassificacao() {
 
-	exibirProdutos=falso
 	buscaProduto=falso			   
 			
 	enquanto(opcaoClassificacao != "A" ou opcaoClassificacao != "B" ou opcaoClassificacao != "C") {
@@ -576,7 +564,6 @@ programa
 			}
 			
 			buscaProduto=verdadeiro
-			exibirProdutos=verdadeiro
 			pularLinha()
 			pularLinha()
 
@@ -601,7 +588,6 @@ programa
 			}
 			
 			buscaProduto=verdadeiro
-			exibirProdutos=verdadeiro
 			pularLinha()
 			pularLinha()
 
@@ -625,7 +611,6 @@ programa
 			}
 			
 			buscaProduto=verdadeiro
-			exibirProdutos=verdadeiro
 			pularLinha()
 			pularLinha()
 		
@@ -669,7 +654,6 @@ programa
 			}			
 			
 			buscaProduto=verdadeiro
-			exibirProdutos=verdadeiro
 			pularLinha()
 			pularLinha()
 
@@ -780,37 +764,53 @@ programa
 				escreva("       ", vetorIdProduto[idProduto], "       ", vetorClassificacaoProduto[idProduto], "                 ", vetorEstoqueProduto[idProduto], "            ", vetorDescricaoProduto[idProduto], "\n") 
 				pularLinha()
 
-				escreva("Informe a quantidade de itens que deseja remover do estoque do produto: ")
-				leia(quantidadeItemProduto)
+																													
+							   
 
 				enquanto(buscaProduto != verdadeiro) {
-					
-					se(quantidadeItemProduto > 0) {
+	 
+													  
 
-						vetorIdProduto[idProduto] = idProduto
+					escreva("Informe a quantidade de itens que deseja remover do estoque do produto: ")
+					leia(quantidadeItemProduto)
 
-						se(vetorEstoqueProduto[idProduto] <= 0) {
+					se (quantidadeItemProduto == 0 e vetorEstoqueProduto[idProduto] == 0 ou quantidadeItemProduto > 0 e vetorEstoqueProduto[idProduto] == 0) {
 
 							buscaProduto=verdadeiro
 							pularLinha()
-							escreva("Não é possível remover mais itens desse estoque, pois o produto já não possui o estoque zerado.")
+							escreva("Não é possível remover mais itens desse estoque e/ou o produto já não possui o estoque zerado.")
+							pularLinha()
 							pularLinha()
 							pare
 							
-						} senao {
+					} senao se (quantidadeItemProduto > 0) {					
+							
+							se (quantidadeItemProduto > 0 e quantidadeItemProduto >= vetorEstoqueProduto[idProduto]) {
+	
+								vetorEstoqueProduto[idProduto] = vetorEstoqueProduto[idProduto] - quantidadeItemProduto 
+							
+			   
 
-							buscaProduto=verdadeiro
-							vetorEstoqueProduto[idProduto] = vetorEstoqueProduto[idProduto] - quantidadeItemProduto
-							pularLinha()
-							escreva("Produto com estoque removido com sucesso!")
-							pularLinha()
-							pularLinha()
-							pare
-						}	
-						
+																													 
+								se (vetorEstoqueProduto[idProduto] < 0) {
+									
+									vetorEstoqueProduto[idProduto] = 0									
+									
+								} 
+								
+								buscaProduto=verdadeiro
+								pularLinha()
+								escreva("Produto com estoque removido com sucesso!")
+								pularLinha()
+								pularLinha()
+								pare	
+						}
+					
 					} senao {
 						
+						pularLinha()
 						escreva("[ERRO] Quantidade inválida, não são permitidos números negativos. Tente novamente!")
+						pularLinha()
 						pularLinha()						
 					}
 
@@ -822,12 +822,14 @@ programa
 				pularLinha()
                 	escreva("[ERRO] Código de produto não cadastrado. ")
                 	pularLinha()
+                	pularLinha()
                 	
 			}
     			
     		} senao {
     			
     			escreva("[ERRO] Código de produto inexistente.")
+    			pularLinha()
     			pularLinha()
     			
     		}
