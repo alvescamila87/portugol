@@ -78,7 +78,10 @@ programa
 	pularLinha()
 	pularLinha()
 	escreva("╔═════════════════════════════════════════════════════════════╗\n")
-	escreva("║ 		 [SCP] - Sistema de Cadastro de Produto            ║\n")
+	escreva("║                      BEM VINDO AO [SCP]                     ║\n")
+	escreva("║                                                             ║\n")
+	escreva("║           [SCP] - Sistema de Cadastro de Produto            ║\n")
+	escreva("║                                                             ║\n")
 	escreva("╚═════════════════════════════════════════════════════════════╝\n")
 	pularLinha()
 	pularLinha()		 
@@ -199,10 +202,10 @@ programa
 				caso 9:
 					pularLinha()
 					pularLinha()
-					escreva("╔══════════════════════════════════════════════╗\n")
-					escreva("║ 		   PROGRAMA FINALIZADO              ║\n")
-					escreva("║ 		 Obrigado! Volte sempre!            ║\n")
-					escreva("╚══════════════════════════════════════════════╝\n")
+					escreva("╔════════════════════════════════════════╗\n")
+					escreva("║          PROGRAMA FINALIZADO           ║\n")
+					escreva("║         Obrigado! Volte sempre!        ║\n")					
+					escreva("╚════════════════════════════════════════╝\n")
 					pularLinha()
 					pularLinha()
 				pare
@@ -843,7 +846,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4742; 
+ * @POSICAO-CURSOR = 1846; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {vetorDescricaoProduto, 4, 8, 21}-{vetorClassificacaoProduto, 4, 36, 25}-{contadorProduto, 5, 9, 15}-{opcao, 5, 28, 5}-{vetorIdProduto, 5, 37, 14}-{idProduto, 5, 58, 9}-{auxiliarOrdenacao, 5, 71, 17}-{quantidadeItemProduto, 5, 92, 21}-{vetorEstoqueProduto, 5, 117, 19};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
