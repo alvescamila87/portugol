@@ -16,13 +16,6 @@ programa
 		}
 	}
 
-	// Função Geral 1 - Imprimir linha
-	funcao vazio imprimirLinha() {
-		
-		escreva("═════════════════════════════════════════\n")
-		
-	}
-
 	// Função Geral 2 - Pular linha
 	funcao vazio pularLinha() {
 		
@@ -202,10 +195,11 @@ programa
 				caso 9:
 					pularLinha()
 					pularLinha()
-					escreva("╔════════════════════════════════════════╗\n")
-					escreva("║          PROGRAMA FINALIZADO           ║\n")
-					escreva("║         Obrigado! Volte sempre!        ║\n")					
-					escreva("╚════════════════════════════════════════╝\n")
+					escreva("        ▐▓█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▓▌ █████\n")
+                    	escreva("        ▐▓█   PROGRAMA FINALIZADO   █▓▌ █▄▄▄█\n")
+                    	escreva("        ▐▓█ Obrigado! Volte sempre! █▓▌ █▄▄▄█\n")
+                    	escreva("        ▐▓█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█▓▌ █████\n")
+                    	escreva("                    ▄▄███▄▄             █████\n")																								   
 					pularLinha()
 					pularLinha()
 				pare
@@ -269,6 +263,7 @@ programa
 	                    escreva("Classificação de produto: Primeira linha \n")
 	                    vetorClassificacaoProduto[contadorProduto] = "Primeira linha"
 	                    vetorIdProduto[contadorProduto] = contadorProduto
+						vetorEstoqueProduto[contadorProduto] = 0																					
 					temProdutoCadastrado=verdadeiro							
 	                    contadorProduto++
 	                    pularLinha()
@@ -280,6 +275,7 @@ programa
 	                    escreva("Classificação de produto: Linha regular \n")
 	                    vetorClassificacaoProduto[contadorProduto] = "Linha regular "
 	                    vetorIdProduto[contadorProduto] = contadorProduto
+						vetorEstoqueProduto[contadorProduto] = 0																					
 					temProdutoCadastrado=verdadeiro							
 	                    contadorProduto++
 	                    pularLinha()
@@ -291,6 +287,7 @@ programa
 	                    escreva("Classificação de produto: Segunda linha \n")
 	                    vetorClassificacaoProduto[contadorProduto] = "Segunda linha "
 	                    vetorIdProduto[contadorProduto] = contadorProduto
+						vetorEstoqueProduto[contadorProduto] = 0																					
 					temProdutoCadastrado=verdadeiro							
 	                    contadorProduto++
 	                    pularLinha()
@@ -312,23 +309,34 @@ programa
 	// Função para atualizar um produto por vez, altera apenas a descrição do produto
 	funcao vazio atualizarProduto() {
 
-	buscaProduto=falso			   
+	buscaProduto=falso	
+
+		//Imprimir cabeçalho da lista de produtos				
+		pularLinha()
+		escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+		escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+		escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+					
+		para(inteiro x = 0; x < contadorProduto; x++) {
+					
+			se(vetorDescricaoProduto[x] != "") {
+                
+		               escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
+				                
+          	} 					
+		}
+		pularLinha()
+		pularLinha()
 				
 		escreva("Informe o código do produto a ser alterado: ")
 		leia(idProduto)
+		pularLinha()	  
 
 		// valida se é um número válido do vetor
 		se(idProduto >= 0 e idProduto < 999) {
 
 				// valida se o índice informado possui produto cadastrado nessa posição do vetor
 				se(idProduto == vetorIdProduto[idProduto]) {
-									
-					pularLinha()
-			 		escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
-			 		escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
-			 		escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
-			 		escreva("       ", vetorIdProduto[idProduto], "       ", vetorClassificacaoProduto[idProduto], "                 ", vetorEstoqueProduto[idProduto], "            ", vetorDescricaoProduto[idProduto], "\n")
-					pularLinha()
 
 					enquanto(buscaProduto != verdadeiro) {
 				
@@ -353,7 +361,7 @@ programa
 								escreva("       ", vetorIdProduto[idProduto], "       ", vetorClassificacaoProduto[idProduto], "                 ", vetorEstoqueProduto[idProduto], "            ", vetorDescricaoProduto[idProduto], "\n") 							   
 								pularLinha()
 								
-								escreva("Produto com inserido com sucesso !")
+								escreva("Produto com descrição atualizada com sucesso!")
 								pularLinha()
 								pularLinha()
 						}
@@ -364,7 +372,8 @@ programa
 					pularLinha()
 					escreva("[ERRO] Código de produto não cadastrado. ")
 					pularLinha()
-
+					pularLinha()
+					
 				}
 			
 		} senao {
@@ -381,9 +390,27 @@ programa
 	funcao vazio excluirProduto() {
 
 	buscaProduto=falso
-        
-	escreva("Informe o código do produto a ser excluído: ")
-	leia(idProduto)
+
+		//Imprimir cabeçalho da lista de produtos				
+		pularLinha()
+		escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+		escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+		escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+						
+		para(inteiro x = 0; x < contadorProduto; x++) {
+						
+			se(vetorDescricaoProduto[x] != "") {
+	                
+		            escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
+					                
+	      	} 					
+		}
+		pularLinha()
+		pularLinha()
+	        
+		escreva("Informe o código do produto a ser excluído: ")
+		leia(idProduto)
+		pularLinha()
 
         // valida se é um número válido do vetor
         se(idProduto >= 0 e idProduto < 999) {
@@ -391,13 +418,6 @@ programa
         	  // valida se o índice informado possui produto cadastrado nessa posição do vetor            
             se(idProduto == vetorIdProduto[idProduto]) {
                 
-                pularLinha()
-			 escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
-			 escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
-			 escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
-			 escreva("       ", vetorIdProduto[idProduto], "       ", vetorClassificacaoProduto[idProduto], "                 ", vetorEstoqueProduto[idProduto], "            ", vetorDescricaoProduto[idProduto], "\n") 
-                pularLinha()
-
                 vetorIdProduto[idProduto] =  vetorIdProduto[idProduto] - idProduto 
                 vetorDescricaoProduto[idProduto] = ""
                 vetorClassificacaoProduto[idProduto] = ""
@@ -423,6 +443,7 @@ programa
                 pularLinha()
                 escreva("[ERRO] Código de produto inexistente. ")
                 pularLinha()
+				pularLinha()			
             
         }        
 	}
@@ -688,8 +709,26 @@ programa
 
     buscaProduto=falso
 
-        escreva("Informe o código do produto que deseja adicionar estoque: ")
-        leia(idProduto)
+		//Imprimir cabeçalho da lista de produtos				
+		pularLinha()
+		escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+		escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+		escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+					
+		para(inteiro x = 0; x < contadorProduto; x++) {
+						
+			se(vetorDescricaoProduto[x] != "") {
+	                
+		            escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
+					                
+	      	} 					
+		}
+		pularLinha()
+		pularLinha()    
+	
+		escreva("Informe o código do produto que deseja adicionar estoque: ")
+	     leia(idProduto)
+	     pularLinha()
 
         // valida se é um número válido do vetor
         se(idProduto >= 0 e idProduto < 999) {
@@ -697,17 +736,11 @@ programa
 		  // valida se o índice informado possui produto cadastrado nessa posição do vetor
             se(vetorIdProduto[idProduto] == idProduto) {
             
-				pularLinha()
-				escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
-				escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
-				escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
-				escreva("       ", vetorIdProduto[idProduto], "       ", vetorClassificacaoProduto[idProduto], "                 ", vetorEstoqueProduto[idProduto], "            ", vetorDescricaoProduto[idProduto], "\n") 
-				pularLinha()
-
             enquanto (buscaProduto != verdadeiro) {
             
                 escreva("Informe a quantidade de itens que deseja adicionar ao estoque: ")
                 leia(quantidadeItemProduto)
+				pularLinha()			
 
 
                 se (quantidadeItemProduto < 0 ) {
@@ -743,6 +776,8 @@ programa
             pularLinha()
             escreva("[ERRO] Código de produto inexistente. ")
             pularLinha()
+			pularLinha()
+			
         }
         
        
@@ -754,21 +789,32 @@ programa
 
 	buscaProduto=falso
 
-    	escreva("Informe o código do produto que deseja ter o estoque removido: ")
-    	leia(idProduto)
+		//Imprimir cabeçalho da lista de produtos				
+		pularLinha()
+		escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
+		escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
+		escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
+						
+		para(inteiro x = 0; x < contadorProduto; x++) {
+						
+			se(vetorDescricaoProduto[x] != "") {
+	                
+		            escreva("       ", vetorIdProduto[x], "       ", vetorClassificacaoProduto[x], "                 ", vetorEstoqueProduto[x], "            ", vetorDescricaoProduto[x], "\n") // Incluir vetor de Estoque
+					                
+	      	} 					
+		}
+		pularLinha()
+		pularLinha()
 
+											
+
+	    	escreva("Informe o código do produto que deseja ter o estoque removido: ")
+	    	leia(idProduto)
+	    	pularLinha()
+			
     		se(idProduto >= 0 e idProduto < 999) {
-
-			se(vetorIdProduto[idProduto] == idProduto) {
-
-				pularLinha()
-				escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
-				escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
-				escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
-				escreva("       ", vetorIdProduto[idProduto], "       ", vetorClassificacaoProduto[idProduto], "                 ", vetorEstoqueProduto[idProduto], "            ", vetorDescricaoProduto[idProduto], "\n") 
-				pularLinha()
-
-																													
+			
+			se(vetorIdProduto[idProduto] == idProduto) {																										
 							   
 
 				enquanto(buscaProduto != verdadeiro) {
@@ -782,33 +828,28 @@ programa
 
 							buscaProduto=verdadeiro
 							pularLinha()
-							escreva("Não é possível remover mais itens desse estoque e/ou o produto já não possui o estoque zerado.")
+							escreva("Não é possível remover mais itens desse estoque e/ou o produto já possui o estoque zerado.")
 							pularLinha()
 							pularLinha()
 							pare
 							
 					} senao se (quantidadeItemProduto > 0) {					
 							
-							se (quantidadeItemProduto > 0 e quantidadeItemProduto >= vetorEstoqueProduto[idProduto]) {
-	
-								vetorEstoqueProduto[idProduto] = vetorEstoqueProduto[idProduto] - quantidadeItemProduto 
 							
-			   
-
-																													 
+						vetorEstoqueProduto[idProduto] = vetorEstoqueProduto[idProduto] - quantidadeItemProduto 
+																																		 
 								se (vetorEstoqueProduto[idProduto] < 0) {
 									
 									vetorEstoqueProduto[idProduto] = 0									
 									
 								} 
 								
-								buscaProduto=verdadeiro
-								pularLinha()
-								escreva("Produto com estoque removido com sucesso!")
-								pularLinha()
-								pularLinha()
-								pare	
-						}
+						buscaProduto=verdadeiro
+						pularLinha()
+						escreva("Produto com estoque removido com sucesso!")
+						pularLinha()
+						pularLinha()
+						pare							
 					
 					} senao {
 						
