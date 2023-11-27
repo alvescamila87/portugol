@@ -402,13 +402,11 @@ programa
 	funcao vazio excluirProduto() {
 
 	buscaProduto=falso
+  temProdutoCadastrado=falsp
 
 		//Imprimir cabeçalho da lista de produtos				
-		pularLinha()
-		escreva("╔═══════════════════════════════════════════════════════════════════════════════╗\n")
-		escreva("║ ID Produto ║   Classificação   ║ Quantidade em Estoque ║ Descrição do Produto ║\n")
-		escreva("╚═══════════════════════════════════════════════════════════════════════════════╝\n")
-						
+		listarProdutos()
+
 		para(inteiro x = 0; x < contadorProduto; x++) {
 						
 			se(vetorDescricaoProduto[x] != "") {
