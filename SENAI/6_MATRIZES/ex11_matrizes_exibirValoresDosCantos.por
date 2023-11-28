@@ -40,6 +40,8 @@ programa
 			escreva("\n")
 			
 		}
+		escreva("O elemento do canto superior esquerdo é: ", cantoSuperiorEsquerdo, ".\n")
+		escreva("O elemento do canto inferior esquerdo é: ", cantoInferiorEsquerdo, ".\n")
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -47,9 +49,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 914; 
+ * @POSICAO-CURSOR = 951; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {matrizNumerosReais, 10, 7, 18};
+ * @SIMBOLOS-INSPECIONADOS = {matrizNumerosReais, 10, 7, 18}-{cantoSuperiorEsquerdo, 10, 33, 21}-{cantoInferiorEsquerdo, 10, 58, 21};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
