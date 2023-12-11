@@ -7,7 +7,8 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro matrizNumerosInteiros[3][4]
+		real matrizNumerosInteiros[3][4], somaL = 0.0
+		
 
 		para(inteiro linha = 0; linha < 3; linha++) {
 
@@ -15,6 +16,10 @@ programa
 
 				escreva("Informe um número real na posição (", linha, ",", coluna, "): ")
 				leia(matrizNumerosInteiros[linha][coluna])
+
+				se(coluna == 0 ou linha == 2) {
+					somaL = somaL + matrizNumerosInteiros[linha][coluna]	
+				}
 				
 			}
 			
@@ -37,29 +42,15 @@ programa
 		para(inteiro linha = 0; linha < 3; linha++) {
 			para(inteiro coluna = 0; coluna < 4; coluna++) {
 
-				se(linha == 0 e coluna == 0) {
-					escreva(matrizNumerosInteiros[linha][coluna], " ")
-				}
-				se(linha == 1 e coluna == 0) {
-					escreva(matrizNumerosInteiros[linha][coluna], " ")
-				}
-				se(linha == 2 e coluna == 0) {
-					escreva(matrizNumerosInteiros[linha][coluna], " ")
-				}
-				se(linha == 2 e coluna == 1) {
-					escreva(matrizNumerosInteiros[linha][coluna], " ")
-				}
-				se(linha == 2 e coluna == 2) {
-					escreva(matrizNumerosInteiros[linha][coluna], " ")
-				}
-				se(linha == 2 e coluna == 3) {
-					escreva(matrizNumerosInteiros[linha][coluna], " ")
-				}				
+				se(coluna == 0 ou linha == 2) {
+					escreva(matrizNumerosInteiros[linha][coluna], " ")	
+				}	
 				
 			}
 			escreva("\n")
 			
 		}
+		escreva("A soma dos elementos em L é de: " + somaL)
 
 	}
 }
@@ -68,9 +59,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1360; 
+ * @POSICAO-CURSOR = 1146; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {matrizNumerosInteiros, 10, 10, 21};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
